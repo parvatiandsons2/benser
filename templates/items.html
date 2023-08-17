@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% load static %} {% block seo %}
+<meta name="description" content="Your website's description goes here." />
+<meta name="keywords" content="keyword1, keyword2, keyword3" />
+<meta name="author" content="Your Name" />
+
+<!-- OpenGraph meta tags for social media sharing -->
+<meta property="og:title" content="Your Page Title" />
+<meta
+  property="og:description"
+  content="Your website's description goes here."
+/>
+<meta property="og:image" content="https://example.com/og-image.jpg" />
+<meta property="og:url" content="https://example.com" />
+<meta property="og:type" content="website" />
+
+<!-- Twitter Card meta tags for Twitter sharing -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Your Page Title" />
+<meta
+  name="twitter:description"
+  content="Your website's description goes here."
+/>
+<meta name="twitter:image" content="https://example.com/twitter-image.jpg" />
+
+<!-- Canonical URL to avoid duplicate content issues -->
+<link rel="canonical" href="https://example.com" />
+
+<!-- Robots meta tag to control search engine indexing -->
+<meta name="robots" content="index, follow" />
+
+<title>Your Page Title</title>
+{% endblock %} {% block style %}
+<style></style>
+{% endblock %} {% block body %}
+<div></div>
+{% endblock %} {% block script %}
+<script></script>
+{% endblock %}
