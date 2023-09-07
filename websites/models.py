@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils.timezone import datetime
 
+from items.models import Item
+
 # Create your models here.
 
 class Contacts(models.Model):
@@ -53,8 +55,8 @@ class Testimonial(models.Model):
     objects = models.Manager()
 
     name = models.CharField(max_length=200)
-    image = models.ImageField(upload_to="testimonials/",null=True, blank=True)
     description = models.TextField()
+    image = models.ImageField(upload_to="testimonials/",null=True, blank=True)
 
     is_active = models.BooleanField(default=True, editable=False)
     created_on = models.DateField(
@@ -66,3 +68,38 @@ class Testimonial(models.Model):
     class Meta:
         '''doc string here'''
         verbose_name_plural = "Testimonials"
+
+class Gallery(models.Model):
+    '''doc string here'''
+    objects = models.Manager()
+
+    item = models.ForeignKey(Item, models.SET_NULL, null=True, blank=True)
+    name = models.CharField(max_length=200)
+    image = models.ImageField(upload_to="testimonials/",null=True, blank=True)
+
+    is_active = models.BooleanField(default=True, editable=False)
+    created_on = models.DateField(
+        default=datetime.now, editable=False, null=True, blank=True)
+    
+    def __str__(self):
+        return str(self.name)
+
+    class Meta:
+        '''doc string here'''
+        verbose_name_plural = "Gallery"
+
+
+class GalleryImages(models.Model):
+    '''doc string here'''
+    objects = models.Manager()
+
+    gallery = models.ForeignKey(Gallery, models.CASCADE)
+    image = models.ImageField(upload_to="testimonials/",null=True, blank=True)
+
+    
+    def __str__(self):
+        return str(self.gallery.name)
+
+    class Meta:
+        '''doc string here'''
+        verbose_name_plural = "Gallery Images"

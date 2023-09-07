@@ -1,0 +1,137 @@
+.bottom-scroll {
+    overflow: visible;
+    background-color: #ccc;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 9999;
+    overflow-x: scroll;
+}
+
+.bottom-scroll div {
+    float: left;
+    overflow: visible;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    /* padding: 10px 10px; */
+    text-decoration: none;
+    font-size: 17px;
+    height: 0;
+    /* width: 2000px; */
+}
+
+.no-sticky {
+    display: none;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+    position: fixed;
+    top: 56px;
+    background-color: #fff;
+    width: 100%;
+    z-index: 999999;
+
+    /* display: table !important; */
+}
+
+#stickyhead {
+    overflow: hidden;
+    /* overflow-x: scroll !important; */
+}
+
+#stickyhead::-webkit-scrollbar {}
+
+#stickyhead thead {
+    white-space: nowrap;
+}
+
+#result_list thead {
+    white-space: nowrap;
+}
+
+.unread {
+    background-color: #fff8c3 !important;
+}
+
+.brand-link .brand-image {
+    opacity: 1 !important;
+}
+
+.dropdown-menu.show {
+    max-height: 456px !important;
+    overflow-y: scroll !important;
+}
+
+.dropdown-item {
+    text-overflow: ellipsis !important;
+    width: 278px !important;
+    display: block !important;
+    overflow-x: hidden !important;
+}
+
+.max-h-300{
+    min-height: 300px;
+}
+
+.max-h-500{
+    min-height: 700px;
+}
+
+.sidepanel {
+    width: 0;
+    position: fixed;
+    z-index: 99999999;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px !important;
+    border: 2px solid #fafafa;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 5px;
+  }
+  
+  .sidepanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+  }
+  
+  .sidepanel .heading {
+    position: absolute;
+    top: 12px;
+    left: 9px;
+    font-size: 25px;
+  }
+  
+  .border-red {
+    border-color: red;
+  }
+  
+  .pt-0 {
+    padding-top: 10px !important;
+  }
+  
+  .module-tr {
+    background-color: rgba(0, 0, 0, .05);
+  }
+  
+  .page {
+    text-align: center;
+  }
+  
+  .page td {
+    vertical-align: middle;
+  }
+  
+  .logs {
+    position: absolute;
+    z-index: 9999999;
+    width: 100%;
+    background-color: #3e3d3d78;
+    right: 0;
+  }

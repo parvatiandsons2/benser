@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.timezone import datetime
-
+from tinymce import models as tinymce_models
 # Create your models here.
 
 class BlogCategory(models.Model):
@@ -8,6 +8,7 @@ class BlogCategory(models.Model):
     objects = models.Manager()
 
     name = models.CharField(max_length=200)
+    url = models.CharField(max_length=200, default='NA', editable=False)
 
     is_active = models.BooleanField(default=True, editable=False)
     created_on = models.DateField(
@@ -25,12 +26,12 @@ class Blog(models.Model):
     objects = models.Manager()
 
     name = models.CharField(max_length=200)
-    url = models.CharField(max_length=200)
+    url = models.CharField(max_length=200, editable=False)
     image = models.ImageField(upload_to='item/')
     category = models.ForeignKey(BlogCategory, on_delete=models.CASCADE)
     
     short_description = models.TextField()
-    long_description = models.TextField()
+    long_description = tinymce_models.HTMLField()
 
     is_active = models.BooleanField(default=True, editable=False)
     created_on = models.DateField(

@@ -8,6 +8,7 @@ class ItemCategory(models.Model):
     objects = models.Manager()
 
     name = models.CharField(max_length=200)
+    url = models.CharField(max_length=200, default='NA', editable=False)
 
     is_active = models.BooleanField(default=True, editable=False)
     created_on = models.DateField(
@@ -25,7 +26,7 @@ class Item(models.Model):
     objects = models.Manager()
 
     name = models.CharField(max_length=200)
-    url = models.CharField(max_length=200)
+    url = models.CharField(max_length=200, editable=False)
     image = models.ImageField(upload_to='item/')
     category = models.ForeignKey(ItemCategory, on_delete=models.CASCADE)
     

@@ -36,6 +36,8 @@ INSTALLED_APPS = [
     "websites.apps.WebsitesConfig",
     "items.apps.ItemsConfig",
     "blogs.apps.BlogsConfig",
+
+    "tinymce",
 ]
 
 
@@ -282,3 +284,32 @@ LOGGING = {
         },
     },
 }
+
+
+# Tinymce
+TINYMCE_DEFAULT_CONFIG = {
+    "plugins": "code",
+}
+
+
+# TINYMCE_JS_ROOT = os.path.join(PROJECT_DIR, 'static/lib')
+# TINYMCE_JS_URL = os.path.join(STATIC_URL, "lib/tiny_mce.js")
+
+
+TINYMCE_DEFAULT_CONFIG = {
+    "height": "320px",
+    "width": "960px",
+    "menubar": "file edit view insert format tools table help",
+    "plugins": "print preview powerpaste casechange importcss tinydrive searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen image link media mediaembed template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker imagetools textpattern noneditable help formatpainter permanentpen pageembed charmap tinycomments mentions quickbars linkchecker emoticons advtable export",
+    # "plugins": "advlist autolink lists link image charmap print preview anchor searchreplace visualblocks code "
+    # "fullscreen insertdatetime media table paste code help wordcount spellchecker",
+    "toolbar": "undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft "
+    "aligncenter alignright alignjustify | outdent indent |  numlist bullist checklist | forecolor "
+    "backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | "
+    "fullscreen  preview save print | insertfile image media pageembed template link anchor codesample | "
+    "a11ycheck ltr rtl | showcomments addcomment code",
+    "custom_undo_redo_levels": 10,
+    "contextmenu": "link image imagetools table configurepermanentpen",
+    "font_formats": "Nunito=nunito,sans-serif; Andale Mono=andale mono,times; Arial=arial,helvetica,sans-serif; Arial Black=arial black,avant garde; Book Antiqua=book antiqua,palatino; Comic Sans MS=comic sans ms,sans-serif; Courier New=courier new,courier; Georgia=georgia,palatino; Helvetica=helvetica; Impact=impact,chicago; Symbol=symbol; Tahoma=tahoma,arial,helvetica,sans-serif; Terminal=terminal,monaco; Times New Roman=times new roman,times; Trebuchet MS=trebuchet ms,geneva; Verdana=verdana,geneva; Webdings=webdings; Wingdings=wingdings,zapf dingbats",
+}
+
