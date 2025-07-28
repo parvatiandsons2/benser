@@ -89,7 +89,7 @@ local_settings.py
 static/assets
 static/img
 websites/static/websites/images/
-grd/static/
+benser/static/
 .env
 db.sqlite3
 

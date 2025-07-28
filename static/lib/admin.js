@@ -224,7 +224,7 @@ function fn_getRole() {
                 $('.sidebar').find('nav').show()
                 if (window.location.pathname == '/admin/') {
                     // document.getElementById('content').innerHTML = content_HTML;
-                    $.loadScript("/static/lib/admin_dashboard.js", function () {
+                    $.loadScript("/static/lib/admin_dashboard.js" %}", function () {
                         document.getElementById('content').innerHTML = fn_BaseHTMLAdmin()
                         fn_GetAdminData()
 
@@ -236,7 +236,7 @@ function fn_getRole() {
                 $('.sidebar').find('nav').show()
                 if (window.location.pathname == '/admin/') {
 
-                    $.loadScript("/static/lib/industry_dashboard.js", function () {
+                    $.loadScript("/static/lib/industry_dashboard.js" %}", function () {
                         fn_GetIndustryData(ind.id)
 
                     })
@@ -249,21 +249,21 @@ function fn_getRole() {
                 if (response.data[0]['is_accepted_rules']) {
                     $('.sidebar').find('nav').show()
                     if (window.location.pathname == '/admin/') {
-                        $.loadScript("/static/lib/candidate_dashboard.js", function () {
+                        $.loadScript("/static/lib/candidate_dashboard.js" %}", function () {
 
                         })
                         // document.getElementById('content').innerHTML = content_HTML
                     }
                 } else {
 
-                    $.getScript("https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js", function () {
+                    $.getScript("https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js" %}", function () {
                         document.getElementById('content').innerHTML = `<div id="dvProjectSidePanel" class="sidepanel pt-0">${fn_SignBaseHtml()}</div>`
                         document.getElementById("dvProjectSidePanel").style.width = "100%";
                         document.getElementById("dvProjectSidePanel").style.padding = "10px";
                         fn_setPDF("/static/files/Academic-Rules.pdf", 'pdfAcademicContainer')
                         fn_setPDF("/static/files/Administration-Rules.pdf", 'pdfAdministrationContainer')
                         $('#dvRuleSign, #btnDone, #resetSign').hide()
-                        $.getScript("/static/lib/sign.js", function () {
+                        $.getScript("/static/lib/sign.js" %}", function () {
                             $('#btnAccept').on('click', function () {
                                 $('#dvCityPricing, #btnAccept').hide()
                                 $('#dvRuleSign, #btnDone, #resetSign').show()

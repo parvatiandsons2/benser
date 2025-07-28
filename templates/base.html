@@ -5,12 +5,454 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block seo %}{% endblock %}
+    <link rel="shortcut icon" type="image/x-icon" href="{% static "images/favicon-yellow.png" %}">
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{% static "css/vendor/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/vendor/animate.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/plugins/swiper.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/plugins/nice-select.css" %}">
+    <link rel="stylesheet" href="{% static "css/plugins/nouislider.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/vendor/magnific-popup.css" %}">
+    <link rel="stylesheet" href="{% static "css/vendor/odometer.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/vendor/fontawesome-pro.css" %}">
+    <link rel="stylesheet" href="{% static "css/vendor/spacing.css" %}">
+    <link rel="stylesheet" href="{% static "css/vendor/remixicon.css" %}">
+    <link rel="stylesheet" href="{% static "css/main.css" %}">
 
     {% block style %}{% endblock %}
 </head>
 <body>
+    <!-- Header area start -->
+    <header>
+        <div class="rs-header-area rs-header-five has-theme-yellow">
+            <div class="container-fluid g-0">
+                <!-- top start -->
+                <div class="rs-header-top rs-header-top-four">
+                    <div class="rs-header-info-wrapper">
+                        <div class="rs-header-info-item">
+                            <div class="rs-header-contact-item">
+                                <span>Email.</span>
+                                <h6><a href="mailto:support.industrie@gmail.com ">support.industrie@gmail.com </a></h6>
+                            </div>
+                        </div>
+                        <div class="rs-header-info-item">
+                            <div class="rs-header-contact-item">
+                                <span>Call.</span>
+                                <h6><a href="tel:+971551579261"> +971 551 579 261 </a></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rs-header-info-item">
+                        <div class="rs-header-contact-item">
+                            <span>
+                            Schedule.
+                        </span>
+                            <h6> Mon - Sat 10.00 - 18.00 </h6>
+                        </div>
+                    </div>
+                </div>
+                <!-- top end -->
+            </div>
+            <div class="container-fluid g-0">
+                <div class="rs-header-inner" id="header-sticky">
+                    <div class="rs-header-left">
+                        <div class="rs-header-logo-wrapper">
+                            <div class="rs-header-logo">
+                                <!-- <div class="rs-header-logo-bg"></div> -->
+                                <a href="index.html"><img src="{% static "images/logo/logo-yellow.png" %}" alt="logo"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rs-header-menu">
+                        <div class="rs-theme-social has-transparent has-orange">
+                            <a href="#"><i class="ri-twitter-x-line"></i></a>
+                            <a href="#"><i class="ri-facebook-fill"></i></a>
+                            <a href="#"><i class="ri-linkedin-fill"></i></a>
+                            <a href="#"><i class="ri-instagram-line"></i></a>
+                        </div>
+                        <nav id="mobile-menu" class="main-menu">
+                            <ul class="multipage-menu">
+                                <li class="menu-item-has-children">
+                                    <a href="#">Home</a>
+                                    <ul class="submenu last-children">
+                                        <li class="menu-item-has-children has-arrow">
+                                            <a href="#">Multipages</a>
+                                            <ul class="submenu">
+                                                <li><a href="index.html">Industry</a></li>
+                                                <li><a href="red-engineering.html">Red Engineering</a></li>
+                                                <li><a href="blue-construction.html">Blue Construction</a></li>
+                                                <li><a href="metallurgy.html">Metallurgy</a></li>
+                                                <li><a href="orange-construction.html">Orange construction</a></li>
+                                                <li><a href="laboratory.html">Laboratory</a></li>
+                                                <li><a href="renewable-energy.html">Renewable Energy</a></li>
+                                                <li><a href="oil-gas.html">Oil & Gas</a></li>
+                                                <li><a href="factory.html">Factory</a></li>
+                                                <li><a href="robotic.html">Robotic</a></li>
+                                                <li><a href="architecture.html">Architecture</a></li>
+                                                <li><a href="manufacturing.html">Manufacturing</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item-has-children has-arrow">
+                                            <a href="javascript:void(0)">Onepages</a>
+                                            <ul class="submenu">
+                                                <li><a href="industrie-one-page.html">Industrie Onepage</a></li>
+                                                <li><a href="red-engineering-one-page.html">Engineering Onepage</a></li>
+                                                <li><a href="blue-construction-one-page.html">Blue Construct Onepage</a></li>
+                                                <li><a href="metallurgy-one-page.html">Metallurgy Onepage</a></li>
+                                                <li><a href="orange-construction-one-page.html">Construction Onepage</a></li>
+                                                <li><a href="laboratory-one-page.html">Laboratory Onepage</a></li>
+                                                <li><a href="renewable-energy-one-page.html"> Energy Onepage</a></li>
+                                                <li><a href="oil-gas-one-page.html">Oil Gas Onepage</a></li>
+                                                <li><a href="factory-one-page.html">Factory Onepage</a></li>
+                                                <li><a href="robotic-one-page.html">Robotic Onepage</a></li>
+                                                <li><a href="architecture-one-page.html">Architecture Onepage</a></li>
+                                                <li><a href="manufacturing-one-page.html">Manufacturing Onepage</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!-- about menu -->
+                                <li class="menu-item-has-children">
+                                    <a href="about.html">About</a>
+                                    <ul class="submenu last-children">
+                                        <li>
+                                            <a href="about.html">About Us 01</a>
+                                        </li>
+                                        <li>
+                                            <a href="about-two.html">About Us 02</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!-- page menu -->
+                                <li class="menu-item-has-children">
+                                    <a href="javascript:void(0)">Pages</a>
+                                    <ul class="submenu last-children">
+                                        <li class=" has-arrow">
+                                            <a href="javascript:void(0)">Services</a>
+                                            <ul class="submenu">
+                                                <li><a href="services.html">Services</a></li>
+                                                <li><a href="services-details.html">Services Details</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class=" has-arrow">
+                                            <a href="javascript:void(0)">Team</a>
+                                            <ul class="submenu">
+                                                <li><a href="team.html">Team</a></li>
+                                                <li><a href="team-details.html">Team Details</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class=" has-arrow">
+                                            <a href="javascript:void(0)">Project</a>
+                                            <ul class="submenu">
+                                                <li><a href="portfolio.html">Project</a></li>
+                                                <li><a href="portfolio-details.html">Project Details</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="pricing.html">Pricing Plan</a>
+                                        </li>
+                                        <li class=" has-arrow">
+                                            <a href="shop.html">Shop</a>
+                                            <ul class="submenu">
+                                                <li><a href="shop.html">Product</a></li>
+                                                <li><a href="shop-details.html">Product Details</a></li>
+                                                <li><a href="checkout.html">Checkout</a></li>
+                                                <li><a href="cart.html">Cart</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="faq.html">Faq</a>
+                                        </li>
+                                        <li>
+                                            <a href="appointment.html">Appointment</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!-- elements menu -->
+                                <li class="has-mega-menu menu-item-has-children">
+                                    <a href="javascript:void(0)">Elements</a>
+                                    <ul class="mega-menu mega-grid">
+                                        <li>
+                                            <a href="#" class="title">Elements Layout</a>
+                                            <ul>
+                                                <li><a href="elements-features.html">Features</a></li>
+                                                <li><a href="elements-advance-tab.html">Advance Tab</a></li>
+                                                <li><a href="elements-work-process.html">Work Process</a></li>
+                                                <li><a href="elements-counter.html">Counter</a></li>
+                                                <li><a href="elements-gsap.html">GSAP</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="title">Elements Layout</a>
+                                            <ul>
+                                                <li><a href="elements-services.html">Services Box</a></li>
+                                                <li><a href="elements-team.html">Team</a></li>
+                                                <li><a href="elements-pricing.html">Pricing</a></li>
+                                                <li><a href="elements-portfolio.html">Project</a></li>
+                                                <li><a href="#">Coming Soon</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="title">Elements Layout</a>
+                                            <ul>
+                                                <li><a href="elements-services-tab.html">Services Tab</a></li>
+                                                <li><a href="elements-testimonial.html">Testimonials</a></li>
+                                                <li><a href="elements-brand.html">Partner Logo</a></li>
+                                                <li><a href="elements-blog.html">Blog</a></li>
+                                                <li><a href="#">Coming Soon</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="menu-item-has-children">
+                                    <a href="javascript:void(0)">Blog</a>
+                                    <ul class="submenu last-children">
+                                        <li>
+                                            <a href="blog.html">Blog</a>
+                                        </li>
+                                        <li>
+                                            <a href="blog-details.html">Blog Details</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a href="contact.html">Contact</a>
+                                    <ul class="submenu last-children">
+                                        <li>
+                                            <a href="contact.html">Contact 01</a>
+                                        </li>
+                                        <li>
+                                            <a href="contact-two.html">Contact 02</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="rs-header-right">
+                        <!-- search area start -->
+                        <div class="rs-header-search-wrapper">
+                            <div class="rs-header-search-icon has-theme-yellow">
+                                <i class="ri-close-fill has-close"></i>
+                                <i class="ri-search-line has-search"></i>
+                            </div>
+                            <form id="contact-form" class="rs-header-search-inner rs-stickys-form" action="https://industrie.rstheme.com/html "mailer.php" method="POST">
+                                <div class="rs-header-search">
+                                    <input type="text" placeholder="Searching...">
+                                    <button type="submit"><i class="ri-search-line"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- search area end -->
+                        <div class="rs-header-btn">
+                            <a class="rs-btn has-theme-yellow has-icon has-bg" href="contact.html">Get In Touch
+                                <span class="icon-box">
+                                <svg class="icon-first" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                    <path
+                                        d="M31.71,15.29l-10-10L20.29,6.71,28.59,15H0v2H28.59l-8.29,8.29,1.41,1.41,10-10A1,1,0,0,0,31.71,15.29Z">
+                                    </path>
+                                </svg>
+                                <svg class="icon-second" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                    <path
+                                        d="M31.71,15.29l-10-10L20.29,6.71,28.59,15H0v2H28.59l-8.29,8.29,1.41,1.41,10-10A1,1,0,0,0,31.71,15.29Z">
+                                    </path>
+                                </svg>
+                            </span>
+                            </a>
+                        </div>
+                        <div class="rs-header-hamburger has-theme-yellow">
+                            <div class="sidebar-toggle">
+                                <a class="bar-icon" href="javascript:void(0)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
+                                        <path d="M8.55566 11H1.55566C1.29045 11 1.03609 11.1054 0.848557 11.2929C0.661021 11.4804 0.555664 11.7348 0.555664 12V19C0.555664 19.2652 0.661021 19.5196 0.848557 19.7071C1.03609 19.8946 1.29045 20 1.55566 20H8.55566C8.82088 20 9.07523 19.8946 9.26277 19.7071C9.45031 19.5196 9.55566 19.2652 9.55566 19V12C9.55566 11.7348 9.45031 11.4804 9.26277 11.2929C9.07523 11.1054 8.82088 11 8.55566 11ZM7.55566 18H2.55566V13H7.55566V18ZM19.5557 0H12.5557C12.2904 0 12.0361 0.105357 11.8486 0.292893C11.661 0.48043 11.5557 0.734784 11.5557 1V8C11.5557 8.26522 11.661 8.51957 11.8486 8.70711C12.0361 8.89464 12.2904 9 12.5557 9H19.5557C19.8209 9 20.0752 8.89464 20.2628 8.70711C20.4503 8.51957 20.5557 8.26522 20.5557 8V1C20.5557 0.734784 20.4503 0.48043 20.2628 0.292893C20.0752 0.105357 19.8209 0 19.5557 0ZM18.5557 7H13.5557V2H18.5557V7ZM19.5557 11H12.5557C12.2904 11 12.0361 11.1054 11.8486 11.2929C11.661 11.4804 11.5557 11.7348 11.5557 12V19C11.5557 19.2652 11.661 19.5196 11.8486 19.7071C12.0361 19.8946 12.2904 20 12.5557 20H19.5557C19.8209 20 20.0752 19.8946 20.2628 19.7071C20.4503 19.5196 20.5557 19.2652 20.5557 19V12C20.5557 11.7348 20.4503 11.4804 20.2628 11.2929C20.0752 11.1054 19.8209 11 19.5557 11ZM18.5557 18H13.5557V13H18.5557V18ZM8.55566 0H1.55566C1.29045 0 1.03609 0.105357 0.848557 0.292893C0.661021 0.48043 0.555664 0.734784 0.555664 1V8C0.555664 8.26522 0.661021 8.51957 0.848557 8.70711C1.03609 8.89464 1.29045 9 1.55566 9H8.55566C8.82088 9 9.07523 8.89464 9.26277 8.70711C9.45031 8.51957 9.55566 8.26522 9.55566 8V1C9.55566 0.734784 9.45031 0.48043 9.26277 0.292893C9.07523 0.105357 8.82088 0 8.55566 0ZM7.55566 7H2.55566V2H7.55566V7Z" fill="#616161"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header area end -->
     
     {% block body %}{% endblock %}
+
+    <div class="rs-footer-bg-thumb-wrapper has-theme-yellow">
+        <div class="rs-footer-bg-thumb" data-background="{% static "images/bg/footer-bg-02.png" %}"></div>
+
+        <!-- subscribe area start -->
+        <div class="rs-subscribe-area rs-subscribe-one has-theme-yellow">
+            <div class="container">
+                <div class="rs-subscribe-wrapper">
+                    <div class="row g-5 align-items-center">
+                        <div class="col-xl-3 col-lg-3">
+                            <div class="rs-subscribe-logo">
+                                <img src="{% static "images/logo/logo-yellow-white.png" %}" alt="image">
+                            </div>
+                        </div>
+                        <div class="col-xl-9 col-lg-9">
+                            <div class="rs-subscribe-content">
+                                <div class="rs-subscribe-text">
+                                    <p>
+                                        Subscribe for the latest news. Stay updated on the latest trends.
+                                    </p>
+                                </div>
+                                <div class="rs-subscribe-input">
+                                    <input id="name" name="name" type="text" placeholder="Enter Your Email">
+                                    <button type="submit" class="rs-btn has-theme-yellow">Send Message</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- subscribe area end -->
+
+        <!-- Body main wrapper end -->
+
+        <!-- footer area start -->
+        <footer>
+            <div class="rs-footer-area rs-footer-two has-theme-yellow">
+                <div class="container">
+                    <div class="rs-footer-top">
+                        <div class="row g-5">
+                            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                                <div class="rs-footer-widget footer-2-col-1">
+                                    <h5 class="rs-footer-widget-title">About Company</h5>
+                                    <div class="rs-footer-widget-content">
+                                        <p class="rs-footer-widget-description">
+                                            It was popularised in the 1960s with the release of Letraset sheets containing Lorem
+                                            Ipsums.
+                                        </p>
+                                        <div class="rs-footer-widget-stroke-text">
+                                            <h3 class="rs-footer-stroke-text has-theme-yellow">Since 2007</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                                <div class="rs-footer-widget footer-2-col-2">
+                                    <h5 class="rs-footer-widget-title">Useful Links</h5>
+                                    <div class="rs-footer-widget-content">
+                                        <div class="rs-footer-widget-links has-theme-yellow">
+                                            <ul>
+                                                <li> <a href="#">About Us</a> </li>
+                                                <li><a href="#">Projects</a></li>
+                                                <li><a href="#">Careers</a></li>
+                                                <li><a href="#">Blog</a></li>
+                                                <li><a href="#">Privacy Policy</a></li>
+                                                <li><a href="#">Services</a></li>
+                                                <li><a href="#">Pricing</a></li>
+                                                <li><a href="#">Team</a></li>
+                                                <li><a href="#">Contact</a></li>
+                                                <li><a href="#">Terms of use</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                                <div class="rs-footer-widget footer-2-col-3">
+                                    <h5 class="rs-footer-widget-title">Office Address</h5>
+                                    <div class="rs-footer-widget-content">
+                                        <div class="rs-footer-widget-meta">
+                                            <div class="rs-footer-widget-address">
+                                                <a target="_blank" href="https://www.google.com/maps">42 Mamnoun Street, Saba Carpet
+                                                    and Antiques Store, UK</a>
+                                            </div>
+                                            <h5 class="rs-footer-widget-title">Email Address</h5>
+                                            <p> Interested in working with us?</p>
+                                            <div class="rs-footer-widget-email">
+                                                <a href="mailto:industrie@gmail.com">industrie@gmail.com</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                                <div class="rs-footer-widget footer-2-col-4">
+                                    <h5 class="rs-footer-widget-title">Phone Number</h5>
+                                    <div class="rs-footer-widget-content">
+                                        <div class="rs-footer-widget-contact-info">
+                                            <div class="rs-footer-widget-number">
+                                                <span>
+                                       <a href="tel:971551579261">+971 551 579 261</a>
+                                    </span>
+                                                <span>
+                                       <a href="tel:971551579261">+97 155 596 1659</a>
+                                    </span>
+                                            </div>
+                                        </div>
+                                        <h5 class="rs-footer-widget-title">Follow Us</h5>
+                                        <div class="rs-footer-widget-social">
+                                            <div class="rs-theme-social has-theme-yellow">
+                                                <a href="#"><i class="ri-twitter-x-line"></i></a>
+                                                <a href="#"><i class="ri-facebook-fill"></i></a>
+                                                <a href="#"><i class="ri-linkedin-fill"></i></a>
+                                                <a href="#"><i class="ri-instagram-line"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rs-footer-copyright-area rs-copyright-one">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-xl-12">
+                                <div class="rs-footer-copyright has-theme-yellow text-center">
+                                    <p class="underline">© <span id="year">2025</span> Industrie. Designed by <a href="https://rstheme.com/">RSTheme</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer area end -->
+
+    </div>
+
+    <!-- Backtotop start -->
+    <div class="backtotop-wrap cursor-pointer has-theme-yellow">
+        <svg class="backtotop-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+    <!-- Backtotop end -->
+     <script src="{% static "js/vendor/jquery-3.7.1.min.js" %}"></script>
+    <script src="{% static "js/plugins/waypoints.min.js" %}"></script>
+    <script src="{% static "js/vendor/bootstrap.bundle.min.js" %}"></script>
+    <script src="{% static "js/plugins/meanmenu.min.js" %}"></script>
+    <script src="{% static "js/plugins/swiper.min.js" %}"></script>
+    <script src="{% static "js/plugins/wow.min.js" %}"></script>
+    <script src="{% static "js/vendor/magnific-popup.min.js" %}"></script>
+    <script src="{% static "js/vendor/isotope.pkgd.min.js" %}"></script>
+    <script src="{% static "js/vendor/imagesloaded.pkgd.min.js" %}"></script>
+    <script src="{% static "js/plugins/nice-select.min.js" %}"></script>
+    <script src="{% static "js/plugins/jarallax.min.js" %}"></script>
+    <script src="{% static "js/vendor/ajax-form.js" %}"></script>
+    <script src="{% static "js/plugins/easypie.js" %}"></script>
+    <script src="{% static "js/plugins/headding-title.js" %}"></script>
+    <script src="{% static "js/plugins/lenis.min.js" %}"></script>
+    <script src="{% static "js/plugins/gsap.min.js" %}"></script>
+    <script src="{% static "js/plugins/rs-anim-int.js" %}"></script>
+    <script src="{% static "js/plugins/rs-scroll-trigger.min.js" %}"></script>
+    <script src="{% static "js/plugins/rs-splitText.min.js" %}"></script>
+    <script src="{% static "js/plugins/jquery.lettering.js" %}"></script>
+    <script src="{% static "js/plugins/parallax-effect.min.js" %}"></script>
+    <script src="{% static "js/plugins/jquery.appear.min.js" %}"></script>
+    <script src="{% static "js/plugins/marquee.min.js" %}"></script>
+    <script src="{% static "js/plugins/chart.umd.min.js" %}"></script>
+    <script src="{% static "js/plugins/nouislider.min.js" %}"></script>
+    <script src="{% static "js/vendor/purecounter.js" %}"></script>
+    <script src="{% static "js/vendor/odometer.min.js" %}"></script>
+    <script src="{% static "js/main.js" %}"></script>
 
     {% block script %}{% endblock %}
 </body>

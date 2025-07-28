@@ -16,15 +16,15 @@ def default_context():
 def index(request):
     '''doc string here'''
     try:
-        __context = default_context()
-        __context['sliders'] = Sliders.objects.filter(is_active=True)
-        __context['testimonials'] = Testimonial.objects.filter(is_active=True)
-        __context['items'] = Item.objects.filter(is_active=True)
-        __context['sliders'] = Sliders.objects.filter(is_active=True)
-        __context['galleries'] = Gallery.objects.filter(is_active=True)
-        __context['blogs'] = Blog.objects.filter(is_active=True)
+        # __context = default_context()
+        # __context['sliders'] = Sliders.objects.filter(is_active=True)
+        # __context['testimonials'] = Testimonial.objects.filter(is_active=True)
+        # __context['items'] = Item.objects.filter(is_active=True)
+        # __context['sliders'] = Sliders.objects.filter(is_active=True)
+        # __context['galleries'] = Gallery.objects.filter(is_active=True)
+        # __context['blogs'] = Blog.objects.filter(is_active=True)
 
-        return render(request, "index.html", __context)
+        return render(request, "index.html")
     except Exception as error:
         return render(request, "error.html", {"error": error})
 
