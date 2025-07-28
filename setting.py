@@ -59,11 +59,11 @@ JAZZMIN_SETTINGS = {
     # Title on the brand (19 chars max) (defaults to current_admin_site.site_header if absent or None)
     "site_brand": "Project_Name",
     # Logo to use for your site, must be present in static files, used for brand on top left
-    "site_logo": "images/website/Project_Name-Logo.png" ,
+    "site_logo": "images/website/Project_Name-Logo.png" %}" ,
     # CSS classes that are applied to the logo above
     "site_logo_classes": "img-circle",
     # Relative path to a favicon for your site, will default to site_logo if absent (ideally 32x32 px)
-    "site_icon": "images/website/Project_Name-Logo.png" ,
+    "site_icon": "images/website/Project_Name-Logo.png" %}" ,
     # Welcome text on the login screen
     "welcome_sign": "Welcome to the Project_Name",
     # Copyright on the footer

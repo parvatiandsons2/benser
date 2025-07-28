@@ -32,9 +32,9 @@ def index(request):
 def about(request):
     '''doc string here'''
     try:
-        __context = default_context()
-        __context['testimonials'] = Testimonial.objects.filter(is_active=True)
-        return render(request, "about.html", __context)
+        # __context = default_context()
+        # __context['testimonials'] = Testimonial.objects.filter(is_active=True)
+        return render(request, "about.html")
     except Exception as error:
         return render(request, "error.html", {"error": error})
 
@@ -42,9 +42,9 @@ def about(request):
 def items(request):
     '''doc string here'''
     try:
-        __context = default_context()
-        __context['items'] = Item.objects.filter(is_active=True)
-        return render(request, "items.html", __context)
+        # __context = default_context()
+        # __context['items'] = Item.objects.filter(is_active=True)
+        return render(request, "items.html")
     except Exception as error:
         return render(request, "error.html", {"error": error})
 
@@ -52,9 +52,9 @@ def items(request):
 def items_by_category(request, url):
     '''doc string here'''
     try:
-        __context = default_context()
-        __context['blogs'] = Item.objects.filter(category__url=url)
-        return render(request, "blogs.html", __context)
+        # __context = default_context()
+        # __context['blogs'] = Item.objects.filter(category__url=url)
+        return render(request, "blogs.html")
     except Exception as error:
         return render(request, "error.html", {"error": error})
 
@@ -62,9 +62,9 @@ def items_by_category(request, url):
 def item_details(request, url):
     '''doc string here'''
     try:
-        __context = default_context()
-        __context['item'] = Item.objects.filter(url=url)
-        return render(request, "item_details.html", __context)
+        # __context = default_context()
+        # __context['item'] = Item.objects.filter(url=url)
+        return render(request, "item_details.html")
     except Exception as error:
         return render(request, "error.html", {"error": error})
 
@@ -72,9 +72,9 @@ def item_details(request, url):
 def gallery(request):
     '''doc string here'''
     try:
-        __context = default_context()
-        __context['galleries'] = Gallery.objects.filter(is_active=True)
-        return render(request, "gallery.html", __context)
+        # __context = default_context()
+        # __context['galleries'] = Gallery.objects.filter(is_active=True)
+        return render(request, "gallery.html")
     except Exception as error:
         return render(request, "error.html", {"error": error})
 
@@ -82,18 +82,18 @@ def gallery(request):
 def blogs(request):
     '''doc string here'''
     try:
-        __context = default_context()
-        __context['blogs'] = Blog.objects.filter(is_active=True)
-        return render(request, "blogs.html", __context)
+        # __context = default_context()
+        # __context['blogs'] = Blog.objects.filter(is_active=True)
+        return render(request, "blogs.html")
     except Exception as error:
         return render(request, "error.html", {"error": error})
 
 def blogs_by_category(request, url):
     '''doc string here'''
     try:
-        __context = default_context()
-        __context['blogs'] = Blog.objects.filter(category__url=url)
-        return render(request, "blogs.html", __context)
+        # __context = default_context()
+        # __context['blogs'] = Blog.objects.filter(category__url=url)
+        return render(request, "blogs.html")
     except Exception as error:
         return render(request, "error.html", {"error": error})
 
@@ -101,9 +101,9 @@ def blogs_by_category(request, url):
 def blog_details(request, url):
     '''doc string here'''
     try:
-        __context = default_context()
-        __context['blog'] = Blog.objects.filter(url=url)
-        return render(request, "blog_details.html", __context)
+        # __context = default_context()
+        # __context['blog'] = Blog.objects.filter(url=url)
+        return render(request, "blog_details.html")
     except Exception as error:
         return render(request, "error.html", {"error": error})
 
@@ -111,8 +111,8 @@ def blog_details(request, url):
 def contact(request):
     '''doc string here'''
     try:
-        __context = default_context()
+        # __context = default_context()
 
-        return render(request, "contact.html", __context)
+        return render(request, "contact.html")
     except Exception as error:
         return render(request, "error.html", {"error": error})
