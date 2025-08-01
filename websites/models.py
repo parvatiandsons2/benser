@@ -33,7 +33,7 @@ class Sliders(models.Model):
     objects = models.Manager()
 
     title = models.CharField(max_length=200, default='NA')
-    sub_title = models.EmailField(max_length=250, default='NA')
+    sub_title = models.CharField(max_length=250, default='NA')
     image = models.ImageField(upload_to='sliders/')
     button_text = models.CharField(max_length=250, default='NA')
     button_url = models.CharField(max_length=250, default='#')

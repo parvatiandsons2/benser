@@ -39,7 +39,7 @@
                 <div class="offcanvas-content">
                     <div class="offcanvas-top d-flex justify-content-between align-items-center mb-20">
                         <div class="offcanvas-logo">
-                            <a class="logo-black" href="index.html"><img src="{% static "images/logo/logo-orange.png" %}" alt="logo"></a>
+                            <a class="logo-black" href="index.html"><img src="{{blog.image.url}}" alt="logo"></a>
                         </div>
                         <div class="offcanvas-close">
                             <button class="offcanvas-close-icon animation--flip">
@@ -186,7 +186,7 @@
                     <div class="col-xl-8 col-lg-8">
                         <div class="rs-postbox-details-wrapper">
                             <div class="rs-postbox-details-thumb">
-                                <img src="{% static "images/blog/details/blog-details-01.png" %}" alt="image">
+                                <img src="{{ blog.image.url }}" alt="image">
                             </div>
                             <div class="rs-postbox-content">
                                 <div class="rs-postbox-meta-list">
@@ -195,29 +195,21 @@
                                     Industrie</a></span>
                                     </div>
                                     <div class="rs-postbox-meta-item">
-                                        <span class="rs-postbox-meta-text">February 8, 2025</span>
+                                        <span class="rs-postbox-meta-text">{{ blog.created_on }}</span>
                                     </div>
                                 </div>
                                 <h3 class="rs-postbox-details-title">
-                                    Construction of a new high tech plant in washingtons
+                                    {{ blog.name }}
                                 </h3>
                             </div>
                             <div class="rs-postbox-details-content">
-                                <p>Industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                                    type and scrambled it to make a type specimen book et iusto odio dignissimos ducimus.</p>
-                                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-                                    voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
-                                    cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est
-                                    laborum et dolorum fuga harum quidem rerum facilis est et expedita distinctio.</p>
+                                <p>{{ blog.long_description }}</p>
                                 <div class="rs-postbox-quote quote-two">
                                     <blockquote>
-                                        <p>“We can easily manage if we will only take, each day, the burden appointed to it. But
-                                            the load will be too heavy for us if we carry yesterday’s burden over again today, and
-                                            then add the burden of the morrow before we are required to bear it factorial non.”</p>
-                                        <cite>Robert Calibo</cite>
+                                        <p>“{{ blog.short_description }}”</p>
                                     </blockquote>
                                 </div>
-                                <h3 class="rs-postbox-details-feature-title mb-20">Growth and meaning of mechanical technology
+                                <!--<h3 class="rs-postbox-details-feature-title mb-20">Growth and meaning of mechanical technology
                                 </h3>
                                 <p>Industry’s standard dummy text ever since the when an unknown printer took a galley of type
                                     and scrambled it to make a type specimen book. It was popularised in the 1960s with the
@@ -276,8 +268,6 @@
                                     <a href="#">Manufacture</a>
                                     <a href="#">Robotic</a>
                                 </div>
-
-
 
                                 <div class="rs-postbox-details-comment-wrapper">
                                     <h5 class="rs-postbox-details-comment-title">3 comments on “Construction of a new high tech plant in washingtons” </h5>
@@ -381,13 +371,13 @@
                                             </div>
                                         </div>
                                     </form>
-                                </div>
+                                </div>-->
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4">
                         <div class="rs-sidebar-wrapper rs-sidebar-sticky">
-                            <div class="sidebar-widget mb-30">
+                            <!--<div class="sidebar-widget mb-30">
                                 <div class="sidebar-search">
                                     <form action="#">
                                         <div class="sidebar-search-input">
@@ -440,7 +430,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
                             <div class="sidebar-widget mb-30">
                                 <h5 class="sidebar-widget-title">Recent Posts</h5>
                                 <div class="sidebar-widget-content">
@@ -515,7 +505,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="sidebar-widget">
+                            <!--<div class="sidebar-widget">
                                 <h5 class="sidebar-widget-title">Popular Tags</h5>
                                 <div class="sidebar-widget-content tagcloud">
                                     <a href="#">Construction</a>
@@ -527,7 +517,7 @@
                                     <a href="#">Oil</a>
                                     <a href="#">Robotic</a>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>

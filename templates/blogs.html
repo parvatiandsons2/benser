@@ -185,274 +185,56 @@
                 <div class="row g-5">
                     <div class="col-xl-8 col-lg-8">
                         <div class="rs-postbox-wrapper">
-                            <article class="rs-postbox-item">
-                                <div class="rs-postbox-thumb">
-                                    <a href="blog-details.html">
-                                        <img src="{% static "images/blog/post/blog-post-01.png" %}" alt="image">
-                                    </a>
-                                    <div class="rs-postbox-tag">
-                                        <a href="blog-details.html">Company</a>
-                                    </div>
-                                </div>
-                                <div class="rs-postbox-content">
-                                    <div class="rs-postbox-meta-list">
-                                        <div class="rs-postbox-meta-item">
-                                            <span class="rs-meta-text">By<a class="meta-author" href="blog-details.html">
-                                       Industrie</a></span>
-                                        </div>
-                                        <div class="rs-postbox-meta-item">
-                                            <span class="rs-postbox-meta-text"><a href="blog-details.html">February 8, 2025</a></span>
-                                        </div>
-                                    </div>
-                                    <h3 class="rs-postbox-title">
-                                        <a href="blog-details.html">Construction of a new high tech plant in washingtons </a>
-                                    </h3>
-                                    <div class="rs-postbox-text">
-                                        <p>Industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. At vero eos et accusamus et iusto odio.</p>
-                                    </div>
-                                    <div class="rs-postbox-btn">
-                                        <a class="rs-btn has-theme-orange has-icon has-bg" href="blog-details.html">Continue Reading
-                                            <span class="icon-box">
-                                    <svg class="icon-first" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                                       <path
-                                          d="M31.71,15.29l-10-10L20.29,6.71,28.59,15H0v2H28.59l-8.29,8.29,1.41,1.41,10-10A1,1,0,0,0,31.71,15.29Z">
-                                       </path>
-                                    </svg>
-                                    <svg class="icon-second" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                                       <path
-                                          d="M31.71,15.29l-10-10L20.29,6.71,28.59,15H0v2H28.59l-8.29,8.29,1.41,1.41,10-10A1,1,0,0,0,31.71,15.29Z">
-                                       </path>
-                                    </svg>
-                                 </span>
+                            {% for blog in blogs %}
+                                <article class="rs-postbox-item">
+                                    <div class="rs-postbox-thumb">
+                                        <a href="blog-details.html">
+                                            <img src="{{blog.image.url}}" alt="image">
                                         </a>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="rs-postbox-item">
-                                <div class="rs-postbox-thumb">
-                                    <a href="blog-details.html">
-                                        <img src="{% static "images/blog/post/blog-post-02.png" %}" alt="image">
-                                    </a>
-                                    <div class="rs-postbox-tag">
-                                        <a href="blog-details.html">Oil Factory</a>
-                                    </div>
-                                </div>
-                                <div class="rs-postbox-content">
-                                    <div class="rs-postbox-meta-list">
-                                        <div class="rs-postbox-meta-item has-separator">
-                                            <span class="rs-meta-text">By<a class="meta-author" href="blog-details.html">
-                                       Industrie</a></span>
-                                        </div>
-                                        <div class="rs-postbox-meta-item">
-                                            <span class="rs-postbox-meta-text"><a href="blog-details.html">June 12,
-                                       2023</a></span>
+                                        <div class="rs-postbox-tag">
+                                            <a href="blog-details.html">Company</a>
                                         </div>
                                     </div>
-                                    <h3 class="rs-postbox-title">
-                                        <a href="blog-details.html"> Building resilient supply chains for industries </a>
-                                    </h3>
-                                    <div class="rs-postbox-text">
-                                        <p>ndustry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. At vero eos et accusamus et iusto odio.</p>
-                                    </div>
-                                    <div class="rs-postbox-btn">
-                                        <a class="rs-btn has-theme-orange has-icon has-bg" href="blog-details.html">Continue Reading
-                                            <span class="icon-box">
-                                    <svg class="icon-first" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                                       <path
-                                          d="M31.71,15.29l-10-10L20.29,6.71,28.59,15H0v2H28.59l-8.29,8.29,1.41,1.41,10-10A1,1,0,0,0,31.71,15.29Z">
-                                       </path>
-                                    </svg>
-                                    <svg class="icon-second" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                                       <path
-                                          d="M31.71,15.29l-10-10L20.29,6.71,28.59,15H0v2H28.59l-8.29,8.29,1.41,1.41,10-10A1,1,0,0,0,31.71,15.29Z">
-                                       </path>
-                                    </svg>
-                                 </span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="rs-postbox-item">
-                                <div class="rs-postbox-thumb">
-                                    <a href="blog-details.html">
-                                        <img src="{% static "images/blog/post/blog-post-03.png" %}" alt="image">
-                                    </a>
-                                    <div class="rs-postbox-tag">
-                                        <a href="blog-details.html">Manufacture</a>
-                                    </div>
-                                </div>
-                                <div class="rs-postbox-content">
-                                    <div class="rs-postbox-meta-list">
-                                        <div class="rs-postbox-meta-item has-separator">
-                                            <span class="rs-meta-text">By<a class="meta-author" href="blog-details.html">
-                                       Industrie</a></span>
+                                    <div class="rs-postbox-content">
+                                        <div class="rs-postbox-meta-list">
+                                            <div class="rs-postbox-meta-item">
+                                                <span class="rs-meta-text">By<a class="meta-author" href="blog-details.html">
+                                        Admin</a></span>
+                                            </div>
+                                            <div class="rs-postbox-meta-item">
+                                                <span class="rs-postbox-meta-text"><a href="blog-details.html">{{blog.created_on}}</a></span>
+                                            </div>
                                         </div>
-                                        <div class="rs-postbox-meta-item">
-                                            <span class="rs-postbox-meta-text"><a href="blog-details.html">June 12,
-                                       2023</a></span>
+                                        <h3 class="rs-postbox-title">
+                                            <a href="blog-details.html">{{blog.name}}</a>
+                                        </h3>
+                                        <div class="rs-postbox-text">
+                                            <p>{{blog.short_description}}</p>
+                                        </div>
+                                        <div class="rs-postbox-btn">
+                                            <a class="rs-btn has-theme-orange has-icon has-bg" href="{% url "blog_details" blog.url %}">Continue Reading
+                                                <span class="icon-box">
+                                        <svg class="icon-first" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                        <path
+                                            d="M31.71,15.29l-10-10L20.29,6.71,28.59,15H0v2H28.59l-8.29,8.29,1.41,1.41,10-10A1,1,0,0,0,31.71,15.29Z">
+                                        </path>
+                                        </svg>
+                                        <svg class="icon-second" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                        <path
+                                            d="M31.71,15.29l-10-10L20.29,6.71,28.59,15H0v2H28.59l-8.29,8.29,1.41,1.41,10-10A1,1,0,0,0,31.71,15.29Z">
+                                        </path>
+                                        </svg>
+                                    </span>
+                                            </a>
                                         </div>
                                     </div>
-                                    <h3 class="rs-postbox-title">
-                                        <a href="blog-details.html">Factories technologies in interactive and plants </a>
-                                    </h3>
-                                    <div class="rs-postbox-text">
-                                        <p>Industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. At vero eos et accusamus et iusto odio.</p>
-                                    </div>
-                                    <div class="rs-postbox-btn">
-                                        <a class="rs-btn has-theme-orange has-icon has-bg" href="blog-details.html">Continue Reading
-                                            <span class="icon-box">
-                                    <svg class="icon-first" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                                       <path
-                                          d="M31.71,15.29l-10-10L20.29,6.71,28.59,15H0v2H28.59l-8.29,8.29,1.41,1.41,10-10A1,1,0,0,0,31.71,15.29Z">
-                                       </path>
-                                    </svg>
-                                    <svg class="icon-second" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                                       <path
-                                          d="M31.71,15.29l-10-10L20.29,6.71,28.59,15H0v2H28.59l-8.29,8.29,1.41,1.41,10-10A1,1,0,0,0,31.71,15.29Z">
-                                       </path>
-                                    </svg>
-                                 </span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="rs-postbox-item">
-                                <div class="rs-postbox-thumb">
-                                    <a href="blog-details.html">
-                                        <img src="{% static "images/blog/post/blog-post-04.png" %}" alt="image">
-                                    </a>
-                                    <div class="rs-postbox-tag">
-                                        <a href="blog-details.html">Industry</a>
-                                    </div>
-                                </div>
-                                <div class="rs-postbox-content">
-                                    <div class="rs-postbox-meta-list">
-                                        <div class="rs-postbox-meta-item has-separator">
-                                            <span class="rs-meta-text">By<a class="meta-author" href="blog-details.html">
-                                       Industrie</a></span>
-                                        </div>
-                                        <div class="rs-postbox-meta-item">
-                                            <span class="rs-postbox-meta-text"><a href="blog-details.html">June 12,
-                                       2023</a></span>
-                                        </div>
-                                    </div>
-                                    <h3 class="rs-postbox-title">
-                                        <a href="blog-details.html">Building resilient supply for industries and factorie </a>
-                                    </h3>
-                                    <div class="rs-postbox-text">
-                                        <p>Industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. At vero eos et accusamus et iusto odio.</p>
-                                    </div>
-                                    <div class="rs-postbox-btn">
-                                        <a class="rs-btn has-theme-orange has-icon has-bg" href="blog-details.html">Continue Reading
-                                            <span class="icon-box">
-                                    <svg class="icon-first" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                                       <path
-                                          d="M31.71,15.29l-10-10L20.29,6.71,28.59,15H0v2H28.59l-8.29,8.29,1.41,1.41,10-10A1,1,0,0,0,31.71,15.29Z">
-                                       </path>
-                                    </svg>
-                                    <svg class="icon-second" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                                       <path
-                                          d="M31.71,15.29l-10-10L20.29,6.71,28.59,15H0v2H28.59l-8.29,8.29,1.41,1.41,10-10A1,1,0,0,0,31.71,15.29Z">
-                                       </path>
-                                    </svg>
-                                 </span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="rs-postbox-item">
-                                <div class="rs-postbox-thumb">
-                                    <a href="blog-details.html">
-                                        <img src="{% static "images/blog/post/blog-post-01.png" %}" alt="image">
-                                    </a>
-                                    <div class="rs-postbox-tag">
-                                        <a href="blog-details.html">Manufacture</a>
-                                    </div>
-                                </div>
-                                <div class="rs-postbox-content">
-                                    <div class="rs-postbox-meta-list">
-                                        <div class="rs-postbox-meta-item has-separator">
-                                            <span class="rs-meta-text">By<a class="meta-author" href="blog-details.html">
-                                       Industrie</a></span>
-                                        </div>
-                                        <div class="rs-postbox-meta-item">
-                                            <span class="rs-postbox-meta-text"><a href="blog-details.html">June 12,
-                                       2023</a></span>
-                                        </div>
-                                    </div>
-                                    <h3 class="rs-postbox-title">
-                                        <a href="blog-details.html">Construction of a new high tech plant in Washington </a>
-                                    </h3>
-                                    <div class="rs-postbox-text">
-                                        <p>Industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. At vero eos et accusamus et iusto odio.</p>
-                                    </div>
-                                    <div class="rs-postbox-btn">
-                                        <a class="rs-btn has-theme-orange has-icon has-bg" href="blog-details.html">Continue Reading
-                                            <span class="icon-box">
-                                    <svg class="icon-first" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                                       <path
-                                          d="M31.71,15.29l-10-10L20.29,6.71,28.59,15H0v2H28.59l-8.29,8.29,1.41,1.41,10-10A1,1,0,0,0,31.71,15.29Z">
-                                       </path>
-                                    </svg>
-                                    <svg class="icon-second" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                                       <path
-                                          d="M31.71,15.29l-10-10L20.29,6.71,28.59,15H0v2H28.59l-8.29,8.29,1.41,1.41,10-10A1,1,0,0,0,31.71,15.29Z">
-                                       </path>
-                                    </svg>
-                                 </span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="rs-postbox-item">
-                                <div class="rs-postbox-thumb">
-                                    <a href="blog-details.html">
-                                        <img src="{% static "images/blog/post/blog-post-02.png" %}" alt="image">
-                                    </a>
-                                    <div class="rs-postbox-tag">
-                                        <a href="blog-details.html">Oil Factory</a>
-                                    </div>
-                                </div>
-                                <div class="rs-postbox-content">
-                                    <div class="rs-postbox-meta-list">
-                                        <div class="rs-postbox-meta-item has-separator">
-                                            <span class="rs-meta-text">By<a class="meta-author" href="blog-details.html">
-                                       Industrie</a></span>
-                                        </div>
-                                        <div class="rs-postbox-meta-item">
-                                            <span class="rs-postbox-meta-text"><a href="blog-details.html">June 12,
-                                       2023</a></span>
-                                        </div>
-                                    </div>
-                                    <h3 class="rs-postbox-title">
-                                        <a href="blog-details.html">Interactive technologies in factories and plants </a>
-                                    </h3>
-                                    <div class="rs-postbox-text">
-                                        <p>Industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. At vero eos et accusamus et iusto odio.</p>
-                                    </div>
-                                    <div class="rs-postbox-btn">
-                                        <a class="rs-btn has-theme-orange has-icon has-bg" href="blog-details.html">Continue Reading
-                                            <span class="icon-box">
-                                    <svg class="icon-first" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                                       <path
-                                          d="M31.71,15.29l-10-10L20.29,6.71,28.59,15H0v2H28.59l-8.29,8.29,1.41,1.41,10-10A1,1,0,0,0,31.71,15.29Z">
-                                       </path>
-                                    </svg>
-                                    <svg class="icon-second" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                                       <path
-                                          d="M31.71,15.29l-10-10L20.29,6.71,28.59,15H0v2H28.59l-8.29,8.29,1.41,1.41,10-10A1,1,0,0,0,31.71,15.29Z">
-                                       </path>
-                                    </svg>
-                                 </span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </article>
+                                </article>
+                            {% endfor %}
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4">
                         <div class="rs-sidebar-wrapper rs-sidebar-sticky">
-                            <div class="sidebar-widget mb-30">
+                            <!--<div class="sidebar-widget mb-30">
                                 <div class="sidebar-search">
                                     <form action="#">
                                         <div class="sidebar-search-input">
@@ -466,47 +248,24 @@
                                         </div>
                                     </form>
                                 </div>
-                            </div>
+                            </div>-->
                             <div class="sidebar-widget widget-categories-two mb-30">
                                 <h5 class="sidebar-widget-title">Categories</h5>
                                 <div class="sidebar-widget-content">
                                     <div class="list">
                                         <ul>
+                                            {% for dt in category %}
                                             <li>
                                                 <a href="#">
-                                                    Bridge Construction
+                                                    {{dt.name}}
                                                     <i class="ri-arrow-right-line"></i></a>
                                             </li>
-                                            <li>
-                                                <a href="#">
-                                                    High regulation industry
-                                                    <i class="ri-arrow-right-line"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    Industrial Construction
-                                                    <i class="ri-arrow-right-line"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    Mechanical Engineering
-                                                    <i class="ri-arrow-right-line"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    Oil &amp; Gas Energy
-                                                    <i class="ri-arrow-right-line"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    Manufacturing solutions
-                                                    <i class="ri-arrow-right-line"></i></a>
-                                            </li>
+                                            {% endfor %}
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div class="sidebar-widget mb-30">
+                            <!--<div class="sidebar-widget mb-30">
                                 <h5 class="sidebar-widget-title">Recent Posts</h5>
                                 <div class="sidebar-widget-content">
                                     <div class="sidebar-blog-item-wrapper">
@@ -592,12 +351,12 @@
                                     <a href="#">Oil</a>
                                     <a href="#">Robotic</a>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                 </div>
                 <!-- pagination style -->
-                <div class="row">
+                <!--<div class="row">
                     <div class="col-xl-6">
                         <div class="pagination-wrapper mt-40">
                             <div class="common-pagination text-start">
@@ -612,7 +371,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
                 <!-- pagination style end -->
             </div>
         </section>

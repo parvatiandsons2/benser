@@ -155,7 +155,46 @@
     <main>
 
         <!-- banner area start -->
-        <section class="rs-banner-area rs-banner-eight rs-swiper">
+        <section class="rs-banner-area rs-banner-eight">
+            <div class="rs-banner-item-wrapper">
+                <div class="rs-banner-bg-thumb" data-background="{{sliders.image.url}}">
+                </div>
+                <div class="container">
+                    <div class="row g-5">
+                        <div class="col-xxl-7 col-xl-8 col-lg-10">
+                            <div class="rs-banner-item">
+                                <div class="rs-banner-content">
+                                    <span class="rs-banner-subtitle">
+                                        Cranes
+                                        <span class="rs-border-line"></span>
+                                    </span>
+                                    <h1 class="rs-banner-title">{{sliders.title|safe}}</h1>
+                                    <!--We Provide Top-Notch <span class="rs-theme-yellow">Industrial Cranes</span>-->
+                                    <div class="rs-banner-descrip">
+                                        <p>{{sliders.sub_title}}d</p>
+                                    </div>
+                                    <div class="rs-banner-btn">
+                                        <a class="rs-btn has-theme-yellow has-icon has-bg" href="{{sliders.button_url}}">
+                                            {{sliders.button_text}}
+                                            <span class="icon-box">
+                                                <svg class="icon-first" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                                    <path d="M31.71,15.29l-10-10L20.29,6.71,28.59,15H0v2H28.59l-8.29,8.29,1.41,1.41,10-10A1,1,0,0,0,31.71,15.29Z"></path>
+                                                </svg>
+                                                <svg class="icon-second" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                                    <path d="M31.71,15.29l-10-10L20.29,6.71,28.59,15H0v2H28.59l-8.29,8.29,1.41,1.41,10-10A1,1,0,0,0,31.71,15.29Z"></path>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </section>
+
+        <!--<section class="rs-banner-area rs-banner-eight rs-swiper">
             <div class="rs-banner-slider-wrapper">
                 <div class="swiper" data-clone-slides="false" data-loop="true" data-speed="2000" data-autoplay="true" data-dots-dynamic="false" data-hover-pause="true" data-effect="fade" data-delay="3000" data-item="1" data-margin="30">
                     <div class="swiper-wrapper process-counts">
@@ -250,20 +289,20 @@
                             </div>
                         </div>
                     </div>
-                    <!-- If we need navigation buttons -->
+                    
                     <div class="rs-banner-navigation">
                         <button class="swiper-button-prev rs-swiper-btn has-theme-black"><i
                         class="fa-regular fa-arrow-left"></i></button>
                         <button class="swiper-button-next rs-swiper-btn has-theme-black"><i
                         class="fa-regular fa-arrow-right"></i></button>
                     </div>
-                    <!-- if we need pagination -->
+                    
                     <div class="rs-banner-pagination d-block d-md-none">
                         <div class="swiper-pagination rs-pagination has-theme-yellow"></div>
                     </div>
                 </div>
             </div>
-        </section>
+        </section>-->
         <!-- banner area end -->
 
         <!-- feature area start -->
@@ -278,10 +317,9 @@
                                     <path d="M59.9697 51.314H0V48.227H3.99496V38.6482L8.74653 33.8663L9.27617 7.47541H14.6482L15.0265 27.5561L15.6772 26.9054L16.4187 27.6469L16.8726 0H22.2446L22.6229 18.1286H22.6532C24.5448 18.1286 26.1034 19.6721 26.1034 21.5637V27.9193L27.4351 29.2509L29.7957 26.8903L31.2787 28.3733V22.744C31.2787 20.8525 32.8222 19.309 34.7289 19.309H34.9256C35.3947 17.7957 36.7415 16.691 38.3153 16.5246V15.889C38.3153 15.4199 38.6936 15.0265 39.1778 15.0265H40.4943C40.9634 15.0265 41.3569 15.4048 41.3569 15.889V16.5246C43.3695 16.7364 44.9584 18.4464 44.9584 20.5195V28.0555C45.2459 27.087 45.9571 26.3001 46.9105 25.8916V20.3682C46.9105 18.3102 48.4842 16.6003 50.4817 16.3884V15.7528C50.4817 15.2837 50.86 14.8903 51.3443 14.8903H52.6608C53.1299 14.8903 53.5233 15.2686 53.5233 15.7528V16.3884C55.5359 16.6003 57.1248 18.3102 57.1248 20.3834V48.2421H60V51.3291L59.9697 51.314ZM0.907945 50.4212H59.0769V49.1501H56.2018V20.3682C56.2018 18.6583 54.8096 17.2661 53.0996 17.2661H52.1463L52.6154 16.57V15.768L51.3291 15.8134L51.3745 16.6003L51.8436 17.2963L50.9054 17.2661C49.1955 17.2661 47.8033 18.6583 47.8033 20.3682V26.5422L47.4855 26.6482C46.4111 26.9811 45.6999 27.9496 45.6999 29.0542V38.285H44.0504V20.5195C44.0504 18.8096 42.6583 17.4174 40.9483 17.4174H39.995L40.4641 16.7213V15.9042L39.1778 15.9496L39.2232 16.7364L39.6923 17.4325L38.7541 17.4023C37.3014 17.4023 36.0151 18.4313 35.7125 19.8537L35.6368 20.2169H34.7289C33.3216 20.2169 32.1866 21.3518 32.1866 22.7591V30.5523L29.8108 28.1765L27.4502 30.5372L25.2106 28.2976V21.5637C25.2106 20.1564 24.0757 19.0214 22.6683 19.0214H21.7453L21.367 0.892812H17.7654L17.2812 29.7806L15.6772 28.1765L14.1639 29.6898L13.7705 8.36822H10.169L9.65448 34.2446L4.9029 39.0265V49.1349H0.907945V50.4061V50.4212ZM32.5952 41.826H24.802V39.4653H32.5952V41.826ZM25.6948 40.918H31.6873V40.3581H25.6948V40.918ZM23.0467 41.826H15.2535V39.4653H23.0467V41.826ZM16.1463 40.918H22.1387V40.3581H16.1463V40.918ZM13.5132 41.826H5.72005V39.4653H13.5132V41.826ZM6.61286 40.918H12.6053V40.3581H6.61286V40.918ZM47.7881 38.2699H45.9874V29.0391C45.9874 28.2522 46.4262 27.4956 47.1223 27.1021L47.8033 26.7087V38.2699H47.7881ZM46.8802 37.3619V28.9634C46.8802 28.9634 46.8802 29.024 46.8802 29.0391V37.3619ZM35.6217 33.2005H34.8045L32.459 30.855V27.7982C32.459 26.5574 33.4729 25.5586 34.6986 25.5586H35.6066V33.2005H35.6217ZM33.367 30.4918L34.7137 31.8386V26.4514C33.9723 26.4514 33.367 27.0567 33.367 27.7982V30.4767V30.4918ZM22.7137 30.5372L21.9571 29.7806L21.7301 19.3241H22.6381C23.8789 19.3241 24.8777 20.338 24.8777 21.5637V28.3581L22.6986 30.5372H22.7137ZM22.6532 20.2169L22.8348 29.1299L23.9849 27.9798V21.5637C23.9849 20.8222 23.3796 20.2169 22.6532 20.2169ZM32.459 26.3153V22.7591C32.459 21.5183 33.4729 20.5195 34.6986 20.5195H35.6066V25.256H34.6986C34.1538 25.256 33.6242 25.4376 33.1702 25.7705L32.4439 26.3153H32.459ZM34.6986 21.4124C33.9571 21.4124 33.3518 22.0177 33.3518 22.7591V24.6356C33.7755 24.454 34.2295 24.348 34.6986 24.348V21.4124Z" fill="#1F1F1F"></path>
                                 </svg>
                             </div>
-                            <h5 class="rs-feature-title">Best Manufacturing Service Provider</h5>
+                            <h5 class="rs-feature-title">Innovative Solutions</h5>
                             <div class="rs-feature-text">
-                                <p> At the heart of the global landscape, the industry stands as a multidimensional was
-                                    progress driving. </p>
+                                <p>We deliver forward-thinking solutions that drive business growth and operational efficiency across industries.</p>
                             </div>
                         </div>
                     </div>
@@ -303,10 +341,9 @@
                                     <path d="M12.2675 21.4124C11.1535 21.4124 10.2467 20.5057 10.2467 19.3917C10.2467 18.8735 10.454 18.3813 10.8037 18.0057C10.1949 17.5005 9.87109 16.8787 9.87109 16.231C9.87109 15.2207 10.6872 14.288 12.0084 13.7699C11.9954 13.6663 11.9825 13.5627 11.9825 13.4461C11.9825 12.3968 12.8374 11.4513 14.2623 10.9072C15.3115 9.14555 17.9799 7.9668 20.9333 7.9668C22.41 7.9668 23.8219 8.25177 25.0265 8.79581L25.6094 9.05488L25.0395 9.3269C23.7312 9.96162 22.9669 10.972 22.9669 12.086C22.9669 12.6948 23.1872 13.2647 23.6017 13.7699L23.7442 13.9383L23.6146 14.1196C23.3167 14.5342 23.1612 15.0393 23.1612 15.5575C23.1612 15.8943 23.226 16.2181 23.3556 16.529L23.498 16.8658L23.1483 16.9435C21.6328 17.2544 20.0265 17.2414 18.5499 16.9176C18.0706 18.2 16.3478 19.1067 14.2752 19.1067C14.2882 19.1974 14.3011 19.288 14.3011 19.3787C14.3011 20.4927 13.3944 21.3994 12.2804 21.3994L12.2675 21.4124ZM20.9203 8.56265C18.1094 8.56265 15.6224 9.66369 14.7027 11.2958L14.6509 11.3994L14.5473 11.4383C13.3167 11.8787 12.5654 12.6559 12.5654 13.459C12.5654 13.5886 12.5913 13.731 12.6302 13.8735L12.7208 14.1585L12.4488 14.2492C11.2182 14.6637 10.4669 15.4279 10.4669 16.244C10.4669 16.788 10.8167 17.3321 11.4514 17.7595L11.8011 18.0057L11.4514 18.2518C11.0758 18.5238 10.8426 18.9513 10.8426 19.4176C10.8426 20.2077 11.4773 20.8424 12.2675 20.8424C13.0576 20.8424 13.6923 20.2077 13.6923 19.4176C13.6923 19.2492 13.6664 19.0937 13.6017 18.9253L13.4462 18.4979L14.0421 18.5367C14.1198 18.5367 14.1975 18.5497 14.2882 18.5497C16.1923 18.5497 17.8245 17.6818 18.0576 16.5419L18.1224 16.244L18.4203 16.3217C19.7804 16.6715 21.2701 16.7233 22.6949 16.4772C22.6172 16.1922 22.5783 15.9072 22.5783 15.6222C22.5783 15.0523 22.7338 14.5082 23.0188 14.029C22.6043 13.459 22.384 12.8114 22.384 12.1378C22.384 10.9849 23.0576 9.89685 24.2234 9.15851C23.226 8.79581 22.0991 8.61447 20.9333 8.61447L20.9203 8.56265Z" fill="#1F1F1F"></path>
                                 </svg>
                             </div>
-                            <h5 class="rs-feature-title">That always building quality is industrial</h5>
+                            <h5 class="rs-feature-title">Reliable Quality</h5>
                             <div class="rs-feature-text">
-                                <p> Many desktop publishing packages and web page editors now use Lorem Ipsum as their default
-                                    model text.</p>
+                                <p>Built with precision and backed by experience, our services meet the highest industry standards—every time.</p>
                             </div>
                         </div>
                     </div>
@@ -326,10 +363,9 @@
                                     <path d="M13.4558 27.9375C9.0534 27.9375 5.05545 25.5885 2.50424 21.5128C-0.326995 17.0015 -0.809238 11.3857 1.32196 7.52773C2.51979 5.36541 5.05545 2.78308 10.329 2.78308H10.6868V4.88317H10.329C6.96887 4.88317 4.49543 6.14322 3.17315 8.53888C1.43086 11.6812 1.88199 16.5503 4.27764 20.3772C6.56441 24.0329 10.1268 26.0085 14.0314 25.7907H14.3892L14.4981 27.8753H14.1403C13.9069 27.9064 13.6736 27.9064 13.4403 27.9064L13.4558 27.9375ZM9.97122 3.49867C5.2888 3.60756 3.03315 5.92544 1.94421 7.86996C-0.0625397 11.5101 0.404147 16.8303 3.09537 21.1239C5.58437 25.0907 9.47342 27.3308 13.7514 27.2063L13.7203 26.5219C9.69121 26.5996 6.05105 24.5307 3.68651 20.7505C1.15084 16.737 0.684158 11.5723 2.5509 8.2122C3.96652 5.66098 6.51774 4.27648 9.97122 4.18314V3.49867Z" fill="#1F1F1F"></path>
                                 </svg>
                             </div>
-                            <h5 class="rs-feature-title">Experienced &amp; Trusted Best Contractor</h5>
+                            <h5 class="rs-feature-title">Expert Engineering</h5>
                             <div class="rs-feature-text">
-                                <p> Various versions have evolved over the years sometimes by accident, sometimes purpose
-                                    (injected humour and the like). </p>
+                                <p>Our team combines technical expertise and real-world insight to create robust, scalable solutions that last.</p>
                             </div>
                         </div>
                     </div>
@@ -341,20 +377,20 @@
         <!-- about area start -->
         <section class="rs-about-area section-space-bottom rs-about-eight">
             <div class="rs-about-shape-one">
-                <img src="{% static "images/shape/about-shape-03.png" %}" alt="image">
+                <img src="{% static 'images/shape/about-shape-03.png' %}" alt="shape">
             </div>
             <div class="rs-about-shape-two">
-                <img src="{% static "images/shape/about-shape-04.png" %}" alt="image">
+                <img src="{% static 'images/shape/about-shape-04.png' %}" alt="shape">
             </div>
             <div class="container">
                 <div class="row g-5">
                     <div class="col-xl-5 col-lg-5">
                         <div class="rs-about-thumb-wrapper">
                             <div class="rs-about-thumb img-one">
-                                <img src="{% static "images/about/about-thumb-11.png" %}" alt="image">
+                                <img src="{% static 'images/about/about-thumb-11.png' %}" alt="Crane Image 1">
                             </div>
                             <div class="rs-about-thumb img-two">
-                                <img src="{% static "images/about/about-thumb-12.png" %}" alt="image">
+                                <img src="{% static 'images/about/about-thumb-12.png' %}" alt="Crane Image 2">
                             </div>
                         </div>
                     </div>
@@ -363,76 +399,71 @@
                             <div class="rs-about-content-wrapper">
                                 <div class="rs-section-title-wrapper">
                                     <span class="rs-section-subtitle has-theme-yellow justify-content-start">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="15" viewBox="0 0 11 15"
-                                 fill="none">
-                                 <path d="M3.14286 10L0 15L8.78104e-07 0L3.14286 5V10Z" fill="#EA5501"></path>
-                                 <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M6.28571 10L3.14286 15L3.14286 10L4.71428 7.5L3.14286 5L3.14286 0L6.28571 5L6.28571 10ZM6.28571 10L7.85714 7.5L6.28571 5V0L11 7.5L6.28571 15V10Z"
-                                    fill="#EA5501"></path>
-                              </svg>
-                              About industrie
-                           </span>
-                                    <h2 class="rs-section-title rs-split-text-enable split-in-fade">We are largest independent
-                                        manufacturing company</h2>
-                                    <p class="descrip">We solve worldwide industrial every problem, the heart of global landscape
-                                        the industry stands multidimensional was progress driving more-or-less normal
-                                        distribution.</p>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="15" viewBox="0 0 11 15" fill="none">
+                                            <path d="M3.14286 10L0 15L0 0L3.14286 5V10Z" fill="#EA5501" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M6.28571 10L3.14286 15L3.14286 10L4.71428 7.5L3.14286 5L3.14286 0L6.28571 5V10ZM6.28571 10L7.85714 7.5L6.28571 5V0L11 7.5L6.28571 15V10Z"
+                                                fill="#EA5501" />
+                                        </svg>
+                                        About BENSER
+                                    </span>
+                                    <h2 class="rs-section-title rs-split-text-enable split-in-fade">
+                                        Trusted Crane Solutions for Industrial Lifting Excellence
+                                    </h2>
+                                    <p class="descrip">
+                                        BENSER (Bisht Engineering Services) is a leading dealer of industrial cranes and lifting equipment, committed to delivering reliable and efficient lifting solutions across construction, infrastructure, and heavy manufacturing industries. 
+                                        <br><br>
+                                        From mobile and overhead cranes to customized lifting systems, we ensure that every project is powered by safety, strength, and engineering precision.
+                                    </p>
                                 </div>
                                 <div class="rs-about-feature-list">
                                     <div class="rs-list-item has-theme-yellow">
                                         <ul>
-                                            <li>
-                                                <i class="fa-regular fa-check"></i>
-                                                Quality Control System
-                                            </li>
-                                            <li>
-                                                <i class="fa-regular fa-check"></i>
-                                                Building Quality Industrial
-                                            </li>
-                                            <li>
-                                                <i class="fa-regular fa-check"></i>
-                                                Quality Control System
-                                            </li>
+                                            <li><i class="fa-regular fa-check"></i> Wide Range of Industrial Cranes</li>
+                                            <li><i class="fa-regular fa-check"></i> Reliable Support & Maintenance Services</li>
+                                            <li><i class="fa-regular fa-check"></i> Trusted by Contractors & Builders Nationwide</li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="rs-about-progress">
                                     <div class="single-progress">
                                         <div class="progress-top">
-                                            <h6 class="progress-title">Providing Quality</h6>
+                                            <h6 class="progress-title">Client Satisfaction & Equipment Reliability</h6>
                                             <span class="progress-number">95%</span>
                                         </div>
                                         <div class="progress">
-                                            <div class="progress-bar wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay=".3s" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                                            </div>
+                                            <div class="progress-bar wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay=".3s"
+                                                role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0"
+                                                aria-valuemax="100"></div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="rs-about-author-info">
                                     <div class="rs-about-btn">
-                                        <a class="rs-btn has-icon has-theme-yellow has-bg" href="about.html">Explore More
+                                        <a class="rs-btn has-icon has-theme-yellow has-bg" href="{% url 'about' %}">
+                                            Explore More
                                             <span class="icon-box">
-                                    <svg class="icon-first" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                                       <path
-                                          d="M31.71,15.29l-10-10L20.29,6.71,28.59,15H0v2H28.59l-8.29,8.29,1.41,1.41,10-10A1,1,0,0,0,31.71,15.29Z">
-                                       </path>
-                                    </svg>
-                                    <svg class="icon-second" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                                       <path
-                                          d="M31.71,15.29l-10-10L20.29,6.71,28.59,15H0v2H28.59l-8.29,8.29,1.41,1.41,10-10A1,1,0,0,0,31.71,15.29Z">
-                                       </path>
-                                    </svg>
-                                 </span>
+                                                <svg class="icon-first" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                                    <path
+                                                        d="M31.71,15.29l-10-10L20.29,6.71,28.59,15H0v2H28.59l-8.29,8.29,1.41,1.41,10-10A1,1,0,0,0,31.71,15.29Z">
+                                                    </path>
+                                                </svg>
+                                                <svg class="icon-second" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                                    <path
+                                                        d="M31.71,15.29l-10-10L20.29,6.71,28.59,15H0v2H28.59l-8.29,8.29,1.41,1.41,10-10A1,1,0,0,0,31.71,15.29Z">
+                                                    </path>
+                                                </svg>
+                                            </span>
                                         </a>
                                     </div>
-                                    <div class="rs-about-author">
+                                    <!--<div class="rs-about-author">
                                         <div class="rs-about-author-thumb">
-                                            <img src="{% static "images/user/user-thumb-04.png" %}" alt="image">
+                                            <img src="{% static 'images/user/user-thumb-04.png' %}" alt="CEO or Manager">
                                         </div>
                                         <div class="rs-about-author-sign-thumb">
-                                            <img src="{% static "images/shape/sign-shape.png" %}" alt="image">
+                                            <img src="{% static 'images/shape/sign-shape.png' %}" alt="Signature">
                                         </div>
-                                    </div>
+                                    </div>-->
                                 </div>
                             </div>
                         </div>
