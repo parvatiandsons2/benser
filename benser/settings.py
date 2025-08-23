@@ -123,19 +123,19 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 JAZZMIN_SETTINGS = {
     # title of the window (Will default to current_admin_site.site_title if absent or None)
-    "site_title": "Project_Name",
+    "site_title": "Benser",
     # Title on the login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_header": "Project_Name",
+    "site_header": "Benser",
     # Title on the brand (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_brand": "Project_Name",
+    "site_brand": "Benser",
     # Logo to use for your site, must be present in static files, used for brand on top left
-    "site_logo": "images/website/Project_Name-Logo.png",
+    # "site_logo": "images/website/Benser-Logo.png",
     # CSS classes that are applied to the logo above
     "site_logo_classes": "img-circle",
     # Relative path to a favicon for your site, will default to site_logo if absent (ideally 32x32 px)
-    "site_icon": "images/website/Project_Name-Logo.png",
+    # "site_icon": "images/website/Benser-Logo.png",
     # Welcome text on the login screen
-    "welcome_sign": "Welcome to the Project_Name",
+    "welcome_sign": "Welcome to the Benser",
     # Copyright on the footer
     "copyright": "Parvati And Sons",
     # The model admin to search from the search bar, search bar omitted if excluded

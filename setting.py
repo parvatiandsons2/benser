@@ -1,315 +1,315 @@
-from pathlib import Path
-import logging
-import environ
-import os
-import requests
+# from pathlib import Path
+# import logging
+# import environ
+# import os
+# import requests
 
-env = environ.Env()
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-# Take environment variables from .env file
-environ.Env.read_env()
+# env = environ.Env()
+# # Build paths inside the project like this: BASE_DIR / 'subdir'.
+# BASE_DIR = Path(__file__).resolve().parent.parent
+# # Take environment variables from .env file
+# environ.Env.read_env()
 
-IS_LIVE = env("IS_LIVE")
+# IS_LIVE = env("IS_LIVE")
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env("SECRET_KEY")
-
-
-# SECURITY WARNING: don't run with debug turned on in production!
-if int(IS_LIVE) == 0:
-    DEBUG = True
-    ALLOWED_HOSTS = []
-else:
-    DEBUG = False
-    ALLOWED_HOSTS = ["*"]
+# # SECURITY WARNING: keep the secret key used in production secret!
+# SECRET_KEY = env("SECRET_KEY")
 
 
-INSTALLED_APPS = [
-    "jazzmin",
-    "django.contrib.admin",
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.staticfiles",
-    "websites.apps.WebsitesConfig",
-    "items.apps.ItemsConfig",
-    "blogs.apps.BlogsConfig",
-
-    "tinymce",
-]
+# # SECURITY WARNING: don't run with debug turned on in production!
+# if int(IS_LIVE) == 0:
+#     DEBUG = True
+#     ALLOWED_HOSTS = []
+# else:
+#     DEBUG = False
+#     ALLOWED_HOSTS = ["*"]
 
 
-PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(PROJECT_DIR, "static")
+# INSTALLED_APPS = [
+#     "jazzmin",
+#     "django.contrib.admin",
+#     "django.contrib.auth",
+#     "django.contrib.contenttypes",
+#     "django.contrib.sessions",
+#     "django.contrib.messages",
+#     "django.contrib.staticfiles",
+#     "websites.apps.WebsitesConfig",
+#     "items.apps.ItemsConfig",
+#     "blogs.apps.BlogsConfig",
 
-STATICFILES_DIRS = [BASE_DIR / "static"]
-MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
-
-STATIC_URL = "/static/"
-MEDIA_URL = "media/"
-
-
-JAZZMIN_SETTINGS = {
-    # title of the window (Will default to current_admin_site.site_title if absent or None)
-    "site_title": "Project_Name",
-    # Title on the login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_header": "Project_Name",
-    # Title on the brand (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_brand": "Project_Name",
-    # Logo to use for your site, must be present in static files, used for brand on top left
-    "site_logo": "images/website/Project_Name-Logo.png" %}" ,
-    # CSS classes that are applied to the logo above
-    "site_logo_classes": "img-circle",
-    # Relative path to a favicon for your site, will default to site_logo if absent (ideally 32x32 px)
-    "site_icon": "images/website/Project_Name-Logo.png" %}" ,
-    # Welcome text on the login screen
-    "welcome_sign": "Welcome to the Project_Name",
-    # Copyright on the footer
-    "copyright": "Parvati And Sons",
-    # The model admin to search from the search bar, search bar omitted if excluded
-    # "search_model": "accounts.expanse",
-    # Field name on user model that contains avatar ImageField/URLField/Charfield or a callable that receives the user
-    "user_avatar": None,
-    ############
-    # Top Menu #
-    ############
-    # Links to put along the top menu
-    "topmenu_links": [
-        # Url that gets reversed (Permissions can be added)
-        {"name": "Home", "url": "admin:index", "permissions": ["auth.view_user"]},
-        # external url that opens in a new window (Permissions can be added)
-        {"name": "Website", "url": "#", "new_window": True},
-        # model admin to link to (Permissions checked against model)
-        # {"model": "auth.User"},
-        # App with dropdown menu to all its models pages (Permissions checked against models)
-        # {"app": "employees"},
-        # {"app": "internships"},
-        # {"app": "customers"},
-        # {"name": "Reports", "url": "/reports/",
-        #     "new_window": True},
-    ],
-    #############
-    # User Menu #
-    #############
-    # Additional links to include in the user menu on the top right ("app" url type is not allowed)
-    "usermenu_links": [
-        {
-            "name": "Support",
-            "url": "https://www.parvatiandsons.in/contact/",
-            "new_window": True,
-        },
-        {"name": "Website", "url": "#", "new_window": True},
-        {"model": "auth.user"},
-    ],
-    #############
-    # Side Menu #
-    #############
-    # Whether to display the side menu
-    "show_sidebar": True,
-    # Whether to aut expand the menu
-    "navigation_expanded": False,
-    # Hide these apps when generating side menu e.g (auth)
-    "hide_apps": [],
-    # Hide these models when generating side menu (e.g auth.user)
-    "hide_models": [],
-    # List of apps (and/or models) to base side menu ordering off of (does not need to contain all apps/models)
-    "order_with_respect_to": [],
-    # Custom links to append to app groups, keyed on app name
-    "custom_links": {
-        # "orders": [{
-        #     "name": "Confirmed Orders",
-        #     "url": "/admin/orders/orders/?status__id__exact=2",
-        #     "icon": "fas fa-circle",
-        # }, {
-        #     "name": "COD Orders",
-        #     "url": "/admin/orders/orders/?status__id__exact=4",
-        #     "icon": "fas fa-circle",
-        # }, {
-        #     "name": "Rejected Orders",
-        #     "url": "/admin/orders/orders/?status__id__exact=3",
-        #     "icon": "fas fa-circle",
-        # }, {
-        #     "name": "Not Paid Orders",
-        #     "url": "/admin/orders/orders/?status__id__exact=1",
-        #     "icon": "fas fa-circle",
-        # }]
-    },
-    # Custom icons for side menu apps/models See https://fontawesome.com/icons?d=gallery&m=free&v=5.0.0,5.0.1,5.0.10,5.0.11,5.0.12,5.0.13,5.0.2,5.0.3,5.0.4,5.0.5,5.0.6,5.0.7,5.0.8,5.0.9,5.1.0,5.1.1,5.2.0,5.3.0,5.3.1,5.4.0,5.4.1,5.4.2,5.13.0,5.12.0,5.11.2,5.11.1,5.10.0,5.9.0,5.8.2,5.8.1,5.7.2,5.7.1,5.7.0,5.6.3,5.5.0,5.4.2
-    # for the full list of 5.13.0 free icon classes
-    "icons": {
-        "auth": "fas fa-users-cog",
-        "auth.user": "fas fa-user",
-        "auth.Group": "fas fa-users",
-    },
-    # Icons that are used when one is not manually specified
-    "default_icon_parents": "fas fa-chevron-circle-right",
-    "default_icon_children": "fas fa-circle",
-    #################
-    # Related Modal #
-    #################
-    # Use modals instead of popups
-    "related_modal_active": False,
-    #############
-    # UI Tweaks #
-    #############
-    # Relative paths to custom CSS/JS scripts (must be present in static files)
-    "custom_css": "css/admin.css" ,
-    # "custom_js": {    '/lib/admin.js','/js/jquery.min.js'},
-    "custom_js": "/lib/admin.js" ,
-    # Whether to show the UI customizer on the sidebar
-    "show_ui_builder": False,
-    ###############
-    # Change view #
-    ###############
-    # Render out the change view as a single form, or in tabs, current options are
-    # - single
-    # - horizontal_tabs (default)
-    # - vertical_tabs
-    # - collapsible
-    # - carousel
-    "changeform_format": "single",
-    # override change forms on a per modeladmin basis
-    "changeform_format_overrides": {
-        "auth.user": "collapsible",
-        "auth.group": "vertical_tabs",
-    },
-    # Add a language dropdown into the admin
-    "language_chooser": False,
-}
-
-JAZZMIN_UI_TWEAKS = {
-    "navbar_small_text": False,
-    "footer_small_text": False,
-    "body_small_text": False,
-    "brand_small_text": False,
-    "brand_colour": "navbar-primary",
-    "accent": "accent-primary",
-    "navbar": "navbar-primary navbar-dark",
-    "no_navbar_border": True,
-    "navbar_fixed": True,
-    "layout_boxed": False,
-    "footer_fixed": False,
-    "sidebar_fixed": True,
-    "sidebar": "sidebar-dark-primary",
-    "sidebar_nav_small_text": False,
-    "sidebar_disable_expand": False,
-    "sidebar_nav_child_indent": False,
-    "sidebar_nav_compact_style": False,
-    "sidebar_nav_legacy_style": False,
-    "sidebar_nav_flat_style": False,
-    "button_classes": {
-        "primary": "btn-outline-primary",
-        "secondary": "btn-outline-secondary",
-        "info": "btn-outline-info",
-        "warning": "btn-outline-warning",
-        "danger": "btn-outline-danger",
-        "success": "btn-outline-success",
-    },
-    "actions_sticky_top": True
-    # "theme": "flatly",
-    # "dark_mode_theme": "darkly",
-}
+#     "tinymce",
+# ]
 
 
-class MyCustomFormatter(logging.Formatter):
-    def my_format(self, record):
-        custom_format = "[{levelname}] {asctime}"
-        formatted_msg = custom_format.format(
-            levelname=record.levelname,
-            asctime=self.formatTime(record),
-        )
-        return formatted_msg
+# PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+# STATIC_ROOT = os.path.join(PROJECT_DIR, "static")
+
+# STATICFILES_DIRS = [BASE_DIR / "static"]
+# MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
+
+# STATIC_URL = "/static/"
+# MEDIA_URL = "media/"
 
 
-class APILogHandler(logging.Handler, MyCustomFormatter):
-    def emit(self, record):
-        try:
-            api_url = "https://www.parvatiandsons.in/api/projects/errors/"  # Replace with your API endpoint
+# JAZZMIN_SETTINGS = {
+#     # title of the window (Will default to current_admin_site.site_title if absent or None)
+#     "site_title": "Project_Name",
+#     # Title on the login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
+#     "site_header": "Project_Name",
+#     # Title on the brand (19 chars max) (defaults to current_admin_site.site_header if absent or None)
+#     "site_brand": "Project_Name",
+#     # Logo to use for your site, must be present in static files, used for brand on top left
+#     "site_logo": "images/website/Project_Name-Logo.png" %}" ,
+#     # CSS classes that are applied to the logo above
+#     "site_logo_classes": "img-circle",
+#     # Relative path to a favicon for your site, will default to site_logo if absent (ideally 32x32 px)
+#     "site_icon": "images/website/Project_Name-Logo.png" %}" ,
+#     # Welcome text on the login screen
+#     "welcome_sign": "Welcome to the Project_Name",
+#     # Copyright on the footer
+#     "copyright": "Parvati And Sons",
+#     # The model admin to search from the search bar, search bar omitted if excluded
+#     # "search_model": "accounts.expanse",
+#     # Field name on user model that contains avatar ImageField/URLField/Charfield or a callable that receives the user
+#     "user_avatar": None,
+#     ############
+#     # Top Menu #
+#     ############
+#     # Links to put along the top menu
+#     "topmenu_links": [
+#         # Url that gets reversed (Permissions can be added)
+#         {"name": "Home", "url": "admin:index", "permissions": ["auth.view_user"]},
+#         # external url that opens in a new window (Permissions can be added)
+#         {"name": "Website", "url": "#", "new_window": True},
+#         # model admin to link to (Permissions checked against model)
+#         # {"model": "auth.User"},
+#         # App with dropdown menu to all its models pages (Permissions checked against models)
+#         # {"app": "employees"},
+#         # {"app": "internships"},
+#         # {"app": "customers"},
+#         # {"name": "Reports", "url": "/reports/",
+#         #     "new_window": True},
+#     ],
+#     #############
+#     # User Menu #
+#     #############
+#     # Additional links to include in the user menu on the top right ("app" url type is not allowed)
+#     "usermenu_links": [
+#         {
+#             "name": "Support",
+#             "url": "https://www.parvatiandsons.in/contact/",
+#             "new_window": True,
+#         },
+#         {"name": "Website", "url": "#", "new_window": True},
+#         {"model": "auth.user"},
+#     ],
+#     #############
+#     # Side Menu #
+#     #############
+#     # Whether to display the side menu
+#     "show_sidebar": True,
+#     # Whether to aut expand the menu
+#     "navigation_expanded": False,
+#     # Hide these apps when generating side menu e.g (auth)
+#     "hide_apps": [],
+#     # Hide these models when generating side menu (e.g auth.user)
+#     "hide_models": [],
+#     # List of apps (and/or models) to base side menu ordering off of (does not need to contain all apps/models)
+#     "order_with_respect_to": [],
+#     # Custom links to append to app groups, keyed on app name
+#     "custom_links": {
+#         # "orders": [{
+#         #     "name": "Confirmed Orders",
+#         #     "url": "/admin/orders/orders/?status__id__exact=2",
+#         #     "icon": "fas fa-circle",
+#         # }, {
+#         #     "name": "COD Orders",
+#         #     "url": "/admin/orders/orders/?status__id__exact=4",
+#         #     "icon": "fas fa-circle",
+#         # }, {
+#         #     "name": "Rejected Orders",
+#         #     "url": "/admin/orders/orders/?status__id__exact=3",
+#         #     "icon": "fas fa-circle",
+#         # }, {
+#         #     "name": "Not Paid Orders",
+#         #     "url": "/admin/orders/orders/?status__id__exact=1",
+#         #     "icon": "fas fa-circle",
+#         # }]
+#     },
+#     # Custom icons for side menu apps/models See https://fontawesome.com/icons?d=gallery&m=free&v=5.0.0,5.0.1,5.0.10,5.0.11,5.0.12,5.0.13,5.0.2,5.0.3,5.0.4,5.0.5,5.0.6,5.0.7,5.0.8,5.0.9,5.1.0,5.1.1,5.2.0,5.3.0,5.3.1,5.4.0,5.4.1,5.4.2,5.13.0,5.12.0,5.11.2,5.11.1,5.10.0,5.9.0,5.8.2,5.8.1,5.7.2,5.7.1,5.7.0,5.6.3,5.5.0,5.4.2
+#     # for the full list of 5.13.0 free icon classes
+#     "icons": {
+#         "auth": "fas fa-users-cog",
+#         "auth.user": "fas fa-user",
+#         "auth.Group": "fas fa-users",
+#     },
+#     # Icons that are used when one is not manually specified
+#     "default_icon_parents": "fas fa-chevron-circle-right",
+#     "default_icon_children": "fas fa-circle",
+#     #################
+#     # Related Modal #
+#     #################
+#     # Use modals instead of popups
+#     "related_modal_active": False,
+#     #############
+#     # UI Tweaks #
+#     #############
+#     # Relative paths to custom CSS/JS scripts (must be present in static files)
+#     "custom_css": "css/admin.css" ,
+#     # "custom_js": {    '/lib/admin.js','/js/jquery.min.js'},
+#     "custom_js": "/lib/admin.js" ,
+#     # Whether to show the UI customizer on the sidebar
+#     "show_ui_builder": False,
+#     ###############
+#     # Change view #
+#     ###############
+#     # Render out the change view as a single form, or in tabs, current options are
+#     # - single
+#     # - horizontal_tabs (default)
+#     # - vertical_tabs
+#     # - collapsible
+#     # - carousel
+#     "changeform_format": "single",
+#     # override change forms on a per modeladmin basis
+#     "changeform_format_overrides": {
+#         "auth.user": "collapsible",
+#         "auth.group": "vertical_tabs",
+#     },
+#     # Add a language dropdown into the admin
+#     "language_chooser": False,
+# }
 
-            # https://www.parvatiandsons.in/
-            projectID=0
-            payload = {
-                "title": self.my_format(record),
-                "message": f"{record.getMessage()} - name={record.name} - funcName={record.funcName} - filename={record.filename} - lineno={record.lineno}",
-                "stack_info": record.exc_text,
-                "projectID": projectID,
-            }
-
-            response = requests.post(api_url, json=payload)
-            if response.status_code == 200:
-                print("Error sent to API successfully.")
-            else:
-                print("Failed to send error to API. Status code:", response.status_code)
-        except Exception as ex:
-            print("Error sending error to API:", ex)
-
-
-LOGGING = {
-    "version": 1,
-    "disable_existing_loggers": False,
-    "formatters": {
-        "verbose": {
-            "format": "{levelname} {asctime} {module} {message}",
-            "style": "{",
-        },
-        "simple": {
-            "format": "{levelname} {message}",
-            "style": "{",
-        },
-    },
-    "handlers": {
-        "file": {
-            "level": "ERROR",
-            "class": "logging.FileHandler",
-            "filename": "error.log",
-            "formatter": "verbose",
-        },
-        "console": {
-            "level": "INFO",
-            "class": "logging.StreamHandler",
-            "formatter": "simple",
-        },
-        "api": {
-            "level": "DEBUG",
-            "class": "Project_Name.settings.APILogHandler",  # Replace with the actual path to APILogHandler
-        },
-    },
-    "loggers": {
-        "django": {
-            "handlers": ["file", "console", "api"],
-            "level": "ERROR",
-            "propagate": True,
-        },
-    },
-}
+# JAZZMIN_UI_TWEAKS = {
+#     "navbar_small_text": False,
+#     "footer_small_text": False,
+#     "body_small_text": False,
+#     "brand_small_text": False,
+#     "brand_colour": "navbar-primary",
+#     "accent": "accent-primary",
+#     "navbar": "navbar-primary navbar-dark",
+#     "no_navbar_border": True,
+#     "navbar_fixed": True,
+#     "layout_boxed": False,
+#     "footer_fixed": False,
+#     "sidebar_fixed": True,
+#     "sidebar": "sidebar-dark-primary",
+#     "sidebar_nav_small_text": False,
+#     "sidebar_disable_expand": False,
+#     "sidebar_nav_child_indent": False,
+#     "sidebar_nav_compact_style": False,
+#     "sidebar_nav_legacy_style": False,
+#     "sidebar_nav_flat_style": False,
+#     "button_classes": {
+#         "primary": "btn-outline-primary",
+#         "secondary": "btn-outline-secondary",
+#         "info": "btn-outline-info",
+#         "warning": "btn-outline-warning",
+#         "danger": "btn-outline-danger",
+#         "success": "btn-outline-success",
+#     },
+#     "actions_sticky_top": True
+#     # "theme": "flatly",
+#     # "dark_mode_theme": "darkly",
+# }
 
 
-# Tinymce
-TINYMCE_DEFAULT_CONFIG = {
-    "plugins": "code",
-}
+# class MyCustomFormatter(logging.Formatter):
+#     def my_format(self, record):
+#         custom_format = "[{levelname}] {asctime}"
+#         formatted_msg = custom_format.format(
+#             levelname=record.levelname,
+#             asctime=self.formatTime(record),
+#         )
+#         return formatted_msg
 
 
-# TINYMCE_JS_ROOT = os.path.join(PROJECT_DIR, 'static/lib')
-# TINYMCE_JS_URL = os.path.join(STATIC_URL, "lib/tiny_mce.js" )
+# class APILogHandler(logging.Handler, MyCustomFormatter):
+#     def emit(self, record):
+#         try:
+#             api_url = "https://www.parvatiandsons.in/api/projects/errors/"  # Replace with your API endpoint
+
+#             # https://www.parvatiandsons.in/
+#             projectID=0
+#             payload = {
+#                 "title": self.my_format(record),
+#                 "message": f"{record.getMessage()} - name={record.name} - funcName={record.funcName} - filename={record.filename} - lineno={record.lineno}",
+#                 "stack_info": record.exc_text,
+#                 "projectID": projectID,
+#             }
+
+#             response = requests.post(api_url, json=payload)
+#             if response.status_code == 200:
+#                 print("Error sent to API successfully.")
+#             else:
+#                 print("Failed to send error to API. Status code:", response.status_code)
+#         except Exception as ex:
+#             print("Error sending error to API:", ex)
 
 
-TINYMCE_DEFAULT_CONFIG = {
-    "height": "320px",
-    "width": "960px",
-    "menubar": "file edit view insert format tools table help",
-    "plugins": "print preview powerpaste casechange importcss tinydrive searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen image link media mediaembed template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker imagetools textpattern noneditable help formatpainter permanentpen pageembed charmap tinycomments mentions quickbars linkchecker emoticons advtable export",
-    # "plugins": "advlist autolink lists link image charmap print preview anchor searchreplace visualblocks code "
-    # "fullscreen insertdatetime media table paste code help wordcount spellchecker",
-    "toolbar": "undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft "
-    "aligncenter alignright alignjustify | outdent indent |  numlist bullist checklist | forecolor "
-    "backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | "
-    "fullscreen  preview save print | insertfile image media pageembed template link anchor codesample | "
-    "a11ycheck ltr rtl | showcomments addcomment code",
-    "custom_undo_redo_levels": 10,
-    "contextmenu": "link image imagetools table configurepermanentpen",
-    "font_formats": "Nunito=nunito,sans-serif; Andale Mono=andale mono,times; Arial=arial,helvetica,sans-serif; Arial Black=arial black,avant garde; Book Antiqua=book antiqua,palatino; Comic Sans MS=comic sans ms,sans-serif; Courier New=courier new,courier; Georgia=georgia,palatino; Helvetica=helvetica; Impact=impact,chicago; Symbol=symbol; Tahoma=tahoma,arial,helvetica,sans-serif; Terminal=terminal,monaco; Times New Roman=times new roman,times; Trebuchet MS=trebuchet ms,geneva; Verdana=verdana,geneva; Webdings=webdings; Wingdings=wingdings,zapf dingbats",
-}
+# LOGGING = {
+#     "version": 1,
+#     "disable_existing_loggers": False,
+#     "formatters": {
+#         "verbose": {
+#             "format": "{levelname} {asctime} {module} {message}",
+#             "style": "{",
+#         },
+#         "simple": {
+#             "format": "{levelname} {message}",
+#             "style": "{",
+#         },
+#     },
+#     "handlers": {
+#         "file": {
+#             "level": "ERROR",
+#             "class": "logging.FileHandler",
+#             "filename": "error.log",
+#             "formatter": "verbose",
+#         },
+#         "console": {
+#             "level": "INFO",
+#             "class": "logging.StreamHandler",
+#             "formatter": "simple",
+#         },
+#         "api": {
+#             "level": "DEBUG",
+#             "class": "Project_Name.settings.APILogHandler",  # Replace with the actual path to APILogHandler
+#         },
+#     },
+#     "loggers": {
+#         "django": {
+#             "handlers": ["file", "console", "api"],
+#             "level": "ERROR",
+#             "propagate": True,
+#         },
+#     },
+# }
+
+
+# # Tinymce
+# TINYMCE_DEFAULT_CONFIG = {
+#     "plugins": "code",
+# }
+
+
+# # TINYMCE_JS_ROOT = os.path.join(PROJECT_DIR, 'static/lib')
+# # TINYMCE_JS_URL = os.path.join(STATIC_URL, "lib/tiny_mce.js" )
+
+
+# TINYMCE_DEFAULT_CONFIG = {
+#     "height": "320px",
+#     "width": "960px",
+#     "menubar": "file edit view insert format tools table help",
+#     "plugins": "print preview powerpaste casechange importcss tinydrive searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen image link media mediaembed template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker imagetools textpattern noneditable help formatpainter permanentpen pageembed charmap tinycomments mentions quickbars linkchecker emoticons advtable export",
+#     # "plugins": "advlist autolink lists link image charmap print preview anchor searchreplace visualblocks code "
+#     # "fullscreen insertdatetime media table paste code help wordcount spellchecker",
+#     "toolbar": "undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft "
+#     "aligncenter alignright alignjustify | outdent indent |  numlist bullist checklist | forecolor "
+#     "backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | "
+#     "fullscreen  preview save print | insertfile image media pageembed template link anchor codesample | "
+#     "a11ycheck ltr rtl | showcomments addcomment code",
+#     "custom_undo_redo_levels": 10,
+#     "contextmenu": "link image imagetools table configurepermanentpen",
+#     "font_formats": "Nunito=nunito,sans-serif; Andale Mono=andale mono,times; Arial=arial,helvetica,sans-serif; Arial Black=arial black,avant garde; Book Antiqua=book antiqua,palatino; Comic Sans MS=comic sans ms,sans-serif; Courier New=courier new,courier; Georgia=georgia,palatino; Helvetica=helvetica; Impact=impact,chicago; Symbol=symbol; Tahoma=tahoma,arial,helvetica,sans-serif; Terminal=terminal,monaco; Times New Roman=times new roman,times; Trebuchet MS=trebuchet ms,geneva; Verdana=verdana,geneva; Webdings=webdings; Wingdings=wingdings,zapf dingbats",
+# }
 
