@@ -23,6 +23,7 @@ class BlogAdmin(admin.ModelAdmin):
 
     def save_model(self, request, obj, form, change):
         obj.url = slugify(obj.name)
+    
         super().save_model(request, obj, form, change)
 
 
